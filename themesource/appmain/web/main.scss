@@ -1,0 +1,130 @@
+// Variables
+@import 'custom-variables';
+@import 'css-variables';
+@import 'variables';
+
+// Mixins
+@import 'mixins/pseudo-absolute';
+
+//generic imports
+@import 'components/background';
+@import 'components/branding-banner';
+@import 'components/helperclasses';
+
+@import 'components/card';
+@import 'components/mx-navigationlist';
+@import 'components/listview';
+@import 'components/table';
+@import 'components/panel';
+
+@import 'components/product';
+@import 'components/notifications';
+@import 'components/region-topbar';
+@import 'components/responsive-navigation';
+
+@import 'components/divider';
+@import 'components/content-container';
+@import 'components/progress-circle';
+@import 'components/current-bill';
+@import 'components/dashboard';
+@import 'components/footer';
+@import 'components/login';
+@import 'components/radio';
+@import 'components/tab';
+@import 'components/map';
+@import 'components/video';
+@import 'components/navigationtree';
+@import 'layouts/layout-dashboard';
+@import 'layouts/layout-atlas-responsive';
+@import 'smarthome/layout';
+@import 'smarthome/card';
+@import 'smarthome/listview';
+@import 'smarthome/general';
+@import 'smarthome/radio';
+@import 'smarthome/inputs';
+@import 'components/modal';
+@import 'components/timeline';
+@import 'components/icontiles';
+@import 'components/studio_styling';
+$bgcolor: $color-red;
+@import 'components/buttons';
+@import 'components/pageheader';
+@import 'components/header';
+@import 'components/text';
+@import 'components/info-tile';
+@import 'components/options';
+@import 'components/listcard';
+@import 'components/topnav';
+@import 'components/svg-icon';
+@import 'components/info-banner';
+@import 'components/temp-fixes';
+
+
+.margin-bottom {
+    margin-bottom: 20px;
+}
+
+.pagestyle__red {
+    $bgcolor: $color-red;
+    @import 'components/buttons';
+    @import 'components/pageheader';
+    @import 'components/header';
+    @import 'components/text';
+    @import 'components/info-tile';
+    @import 'components/listcard';
+    @import 'components/topnav';
+    @import 'components/svg-icon';
+    @import 'components/info-banner';
+}
+
+.pagestyle__purple {
+    $bgcolor: $color-purple;
+    @import 'components/buttons';
+    @import 'components/pageheader';
+    @import 'components/header';
+    @import 'components/text';
+    @import 'components/info-tile';
+    @import 'components/listcard';
+    @import 'components/topnav';
+    @import 'components/svg-icon';
+    @import 'components/info-banner';
+}
+
+.pagestyle__green {
+    $bgcolor: $color-green;
+    @import 'components/buttons';
+    @import 'components/pageheader';
+    @import 'components/header';
+    @import 'components/text';
+    @import 'components/info-tile';
+    @import 'components/listcard';
+    @import 'components/topnav';
+    @import 'components/svg-icon';
+    @import 'components/info-banner';
+}
+
+.pagestyle__blue {
+    $bgcolor: $color-darkblue;
+    @import 'components/buttons';
+    @import 'components/pageheader';
+    @import 'components/header';
+    @import 'components/text';
+    @import 'components/info-tile';
+    @import 'components/listcard';
+    @import 'components/topnav';
+    @import 'components/svg-icon';
+    @import 'components/info-banner';
+}
+
+.pagestyle__grey {
+    $bgcolor: $color-grey;
+    @import 'components/buttons';
+    @import 'components/pageheader';
+    @import 'components/header';
+    @import 'components/text';
+    @import 'components/info-tile';
+    @import 'components/listcard';
+    @import 'components/topnav';
+    @import 'components/svg-icon';
+    @import 'components/info-banner';
+}

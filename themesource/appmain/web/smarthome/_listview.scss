@@ -1,0 +1,79 @@
+.listview-scroll {
+
+    ul {
+        cursor: default;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        -ms-overflow-style: -ms-autohiding-scrollbar;
+        scroll-snap-type: x mandatory;
+        scroll-snap-points-x: repeat(800px);
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        &:after {
+            content: "";
+            position: relative;
+            min-width: 800px;
+            max-width: 800px;
+            height: 400px;
+        }
+
+        li {
+            scroll-snap-align: start;
+            min-width: 800px;
+            max-width: 800px;
+        }
+    }
+}
+
+.listview-3 {
+    ul {
+        cursor: default;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        flex-wrap: wrap;
+
+        li {
+            width: 33.3333%;
+            margin-bottom: 16px;
+        }
+    }
+}
+
+.listview-accessorycard {
+    ul {
+        cursor: default;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        flex-wrap: wrap;
+
+        li {
+            flex: 0 0 160px;
+            margin-bottom: 16px;
+        }
+    }
+}
+
+.listview-smallcard {
+    ul {
+        cursor: default;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        flex-wrap: wrap;
+
+        li {
+            flex: 0 0 90px;
+            margin-bottom: 8px;
+        }
+    }
+}

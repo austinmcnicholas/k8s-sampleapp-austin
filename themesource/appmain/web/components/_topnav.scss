@@ -1,0 +1,79 @@
+.region-topbar .responsive-navigation.topnav {
+  background-color: transparent;
+  .navbar > ul.nav > li.mx-navbar-item {
+    margin: 0 5px;
+    @media (min-width: $screen-md) {
+      display: inline-block;
+    }
+    a {
+      background-color: transparent;
+      border: 0;
+      height: 80px;
+
+      position: relative;
+      @media (min-width: $screen-md) {
+        &::before {
+          @include pseudo-absolute(1);
+          background-color: #555;
+          position: absolute;
+          bottom: 5px;
+          top: auto;
+          left: 0;
+          width: 0;
+          height: 4px;
+          transition: all 0.5s ease-in-out;
+        }
+      }
+      @media (max-width: $screen-sm-max) {
+        border-bottom: solid 1px $gray-primary;
+        height: auto;
+        padding: 15px 10px;
+        width: 100%;
+      }
+      &:hover {
+        background-color:#ffffff;
+        outline: none;
+
+        &:before {
+          width: 100%;
+        }
+      }
+      &:focus {
+        outline: none;
+      }
+    }
+    &.active a {
+      color: #000;
+      @media (min-width: $screen-md) {
+        &::before {
+          width: 100%;
+          background-color: #000;
+        }
+      }
+    }
+    li.mx-navbar-subitem {
+      @media (max-width: $screen-sm-max) {
+        border-left: 6px solid #ccc;
+      }
+      a {
+        height: 40px;
+        display: flex;
+        align-items: center;
+        color: #555;
+        @media (max-width: $screen-sm-max) {
+          font-size: 14px;
+          padding-left: 30px;
+        }
+        .glyphicon {
+          margin-right: 0.5em; 
+        }
+      }
+      &.active a {
+        color: $bgcolor;
+        &:hover {
+          background-color: #eee;
+        }
+      }
+    }
+  }
+}

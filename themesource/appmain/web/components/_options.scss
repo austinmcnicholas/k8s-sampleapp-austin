@@ -1,0 +1,35 @@
+.options-container {
+    padding: 10vh 0;
+
+    .mx-layoutgrid {
+        padding: 0 30px !important; 
+      }
+    
+    h2 {
+        margin-top: 0;
+        margin-bottom: 15px;
+    }
+}
+
+.gift-image {
+    max-width: 50px;
+    animation: shake 1s cubic-bezier(.3,.06,.2,.9);
+}
+
+@keyframes shake {
+    10%, 90% {
+      transform: translate3d(-1px, -1px, 0) rotate(5deg); 
+    }
+    
+    20%, 80% {
+      transform: translate3d(2px, -4px, 0) rotate(-2deg);
+    }
+  
+    30%, 50%, 70% {
+      transform: translate3d(-4px, -1px, 0) rotate(3deg);
+    }
+  
+    40%, 60% {
+      transform: translate3d(4px, 2px, 0) rotate(-4deg);
+    }
+}

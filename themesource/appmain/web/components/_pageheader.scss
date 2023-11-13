@@ -1,0 +1,26 @@
+.pageheader {
+    background: $bgcolor;
+    background: linear-gradient(90deg, rgba($bgcolor, 1) 0%, rgba(darken($bgcolor, 5%),1) 63%, rgba(lighten($bgcolor, 7%),1) 100%);
+    color: white;
+    border: none;
+    margin-bottom:0px;
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    span {
+        color: currentColor;
+        margin: 0;
+    }
+}
+
+.pageheader.pageheaderwithcontrols {
+    background: none;
+    border: 0;
+
+    .btn-block + .btn-block {
+        margin-top: 0;
+    }
+}

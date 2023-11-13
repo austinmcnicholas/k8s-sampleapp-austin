@@ -1,0 +1,21 @@
+.t-main{
+    .info-banner {
+        height: auto !important;
+        min-height: 400px !important;
+    }
+    .icontiles,
+    .options-container {
+        padding: 5vh 0 !important;
+    }
+    .footer {
+        padding: 3vh 0 !important;
+    }
+    .navbar-nav li{
+        &:last-child{
+            display: none !important;
+        }
+        &:last-child(-1){
+            display: none !important;
+        }
+    }
+}

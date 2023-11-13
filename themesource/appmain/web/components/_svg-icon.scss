@@ -1,0 +1,28 @@
+img.svg-icon {
+  &--small {
+    height: 20px;
+    width: 20px;
+  }
+  
+  &--medium {
+    height: 50px;
+    width: 50px;
+  }
+
+  &--large {
+    height: 100px;
+    width: 100px;
+  }
+
+  &--color-gray {
+    color: $gray;
+    * {color: currentColor;}
+    svg {fill: $gray;}
+  }
+
+  &--color-primary {
+    color: $bgcolor;
+    * {color: currentColor;}
+    svg {fill: $bgcolor}
+  }
+}

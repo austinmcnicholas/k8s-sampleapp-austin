@@ -1,0 +1,91 @@
+// dashboard__grid
+
+.dashboard {
+  &__grid {
+    display: flex;
+    // display: grid;
+    // grid-template-columns: 1fr 1fr 1fr 1fr;
+    // gap: 10px;
+  }
+
+  &__grid-item {
+    box-shadow: $shadow-shorter;
+    margin-bottom: 10px;
+    padding: 24px;
+    position: relative;
+    transition: transform .1s ease;
+    will-change: transform;
+
+    &::before {
+      @include pseudo-absolute(-1);
+      background-color: $brand-primary;
+      opacity: .3;
+      transform: scale(1,0);
+      transition: transform .2s ease;
+      transform-origin: bottom;
+      will-change: transform;
+    }
+
+    &::after {
+      @include pseudo-absolute(-2);
+      background-color: white;
+      transition: opacity .2s ease;
+      will-change: opacity;
+    }
+
+
+    &:not(.unclickable) {
+      &::after {background-color: $gray-lighter;}
+      &:hover {
+        // transform: scale(1.02);
+        &::before {transform: scale(1,1);}
+      }
+    }
+
+    h1, h2, h3 {margin: 0;}
+  }
+}
+
+.dashboard {
+  > .row > .col, [class*="col-"] {
+    display: flex;
+    flex-direction: column;
+  }
+  .grid-item {
+    flex: 1;
+    box-shadow: $shadow-shorter;
+    margin: 5px;
+    padding: 24px;
+    position: relative;
+    transition: transform .1s ease;
+    will-change: transform;
+
+    &::before {
+      @include pseudo-absolute(-1);
+      background-color: $brand-primary;
+      opacity: .3;
+      transform: scale(1,0);
+      transition: transform .2s ease;
+      transform-origin: bottom;
+      will-change: transform;
+    }
+
+    &::after {
+      @include pseudo-absolute(-2);
+      background-color: white;
+      transition: opacity .2s ease;
+      will-change: opacity;
+    }
+    &.clickable {
+      &::after {
+        background-color: $gray-lighter;
+      }
+      &:hover {
+        // transform: scale(1.02);
+        &::before {transform: scale(1,1);}
+      }
+    }
+
+    h1, h2, h3 {margin: 0;}
+  }
+}

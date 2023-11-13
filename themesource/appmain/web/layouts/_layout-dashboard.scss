@@ -1,0 +1,82 @@
+.layout-atlas {
+
+    .region-content {
+        background: $bg-color-teritary;
+    }
+
+    .region-topbar {
+        min-height: 80px;
+        border: none;
+
+        .topbar-content {
+            min-height: 80px;
+        }
+    }
+
+    &--toolbar {
+        background: #fff;
+        height: 80px;
+        border-bottom: 1px solid $gray-primary;
+    }
+
+    .dashboard-search {
+        width: 100%;
+        display: inline-flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+
+        .mx-dataview,
+        .mx-dataview-content {
+            width: 100%;
+        }
+
+        .mx-textbox {
+            width: calc(100% - 44px);
+        }
+
+        .form-control {
+            width: 100%;
+            border-radius: 6px 0 0 6px;
+            font-size: 16px;
+            height: 40px;
+
+            &:focus {
+                background: #fff;
+            }
+        }
+
+        .btn.btn-default {
+            height: 40px;
+            position: relative;
+            top: -2px;
+            border-radius: 0 6px 6px 0;
+
+            &:hover,
+            &:focus {
+                color: #fff !important;
+            }
+        }
+    }
+
+    .page-section {
+        padding: 30px 30px;
+
+        // &:first-child {
+        //     padding-left: 0;
+        // }
+
+         &:last-child {
+            padding: 0;
+         }
+    }
+
+    .sidebar-right {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: 25%;
+    }
+
+}

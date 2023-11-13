@@ -1,0 +1,478 @@
+.radio-option.inline.radio-option--ct {
+    margin-bottom: 0;
+
+    .radio {
+        font-size: 0;
+        height: 50px;
+        flex: 0 0 50px;
+        flex-wrap: wrap;
+        margin-bottom: 8px;
+
+        label {
+            min-height: 100%;
+        }
+
+        input {
+            opacity: 0;
+            position: absolute;
+            left: -9999px;
+
+            &:checked,
+            &:not(checked) {
+                & + label:before {
+                    content: "";
+                    border: 0 solid $gray-primary;
+                    border-radius: 50px;
+                    background: $gray-primary;
+                    height: 50px;
+                    width: 50px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin-bottom: 5px;
+                }
+            }
+
+            &:checked {
+                & + label:after {
+                    //border: 2px solid #F5F8FD;
+                    background-color: rgba(0, 0, 0, 0.5);
+                }
+            }
+
+            &[value="Amber"] {
+                & + label:before {
+                    background: #EDAA66;
+                }
+            }
+
+            &[value="Soft_White"] {
+                & + label:before {
+                    background: #FBDF9E;
+                }
+            }
+
+            &[value="Bright_White"] {
+                & + label:before {
+                    background: #F9F0D3;
+                }
+            }
+
+            &[value="Neutral_White"] {
+                & + label:before {
+                    background: #F0F0F0;
+                }
+            }
+
+            &[value="Cool_White"] {
+                & + label:before {
+                    background: #E8ECF8;
+                }
+            }
+
+            &[value="Daylight"] {
+                & + label:before {
+                    background: #CBD8EB;
+                }
+            }
+
+            &[value="Daylight_Deluxe"] {
+                & + label:before {
+                    background: #A1BDE2;
+                }
+            }
+        }
+
+        label:after {
+            content: "";
+            border-radius: 50%;
+            position: absolute;
+            cursor: pointer;
+            height: 40px;
+            width: 40px;
+            top: 5px;
+            left: 5px;
+        }
+    }
+}
+
+.radio-option.inline.radio-option--scene {
+
+    .radio {
+        font-size: 0;
+        height: 80px;
+
+
+        label {
+            min-height: 100%;
+        }
+
+        input {
+            opacity: 0;
+            position: absolute;
+            left: -9999px;
+
+            &:checked,
+            &:not(checked) {
+                & + label:before {
+                    content: "";
+                    border: 1px solid $gray-primary;
+                    border-radius: 4px;
+                    background: $gray-primary;
+                    height: 72px;
+                    width: 72px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin-bottom: 5px;
+                }
+            }
+
+            &:checked {
+                & + label:before {
+                    border-color: #000;
+                    background-color: #000;
+                }
+            }
+        }
+
+        label:after {
+            content: "";
+            background-size: 50%;
+            position: absolute;
+            cursor: pointer;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 72px;
+            width: 72px;
+            top: 0;
+            left: 0;
+        }
+    }
+
+    .radio:nth-child(1) {
+        label:after {
+            background-image: url(../../../images/sunny.svg);
+        }
+    }
+
+    .radio:nth-child(2) {
+        label:after {
+            background-image: url(../../../images/popcorn.svg);
+        }
+    }
+
+    .radio:nth-child(3) {
+        label:after {
+            background-image: url(../../../images/arriving_home.svg);
+        }
+    }
+
+    .radio:nth-child(4) {
+        label:after {
+            background-image: url(../../../images/breakfast.svg);
+        }
+    }
+
+    .radio:nth-child(5) {
+        label:after {
+            background-image: url(../../../images/coffee.svg);
+        }
+    }
+
+    .radio:nth-child(6) {
+        label:after {
+            background-image: url(../../../images/leaving_home.svg);
+        }
+    }
+
+    .radio:nth-child(7) {
+        label:after {
+            background-image: url(../../../images/party.svg);
+        }
+    }
+
+    .radio:nth-child(8) {
+        label:after {
+            background-image: url(../../../images/nighttime.svg);
+        }
+    }
+
+    .radio:nth-child(9) {
+        label:after {
+            background-image: url(../../../images/meal.svg);
+        }
+    }
+
+    .radio:nth-child(10) {
+        label:after {
+            background-image: url(../../../images/couch.svg);
+        }
+    }
+
+}
+
+.radio-option.inline.radio-option--accessory {
+
+    .radio {
+        font-size: 0;
+        height: 80px;
+
+        label {
+            min-height: 100%;
+        }
+
+        input {
+            opacity: 0;
+            position: absolute;
+            left: -9999px;
+
+            &:checked,
+            &:not(checked) {
+                & + label:before {}
+            }
+
+            &:checked {
+                & + label:before {}
+            }
+        }
+
+        label:after {
+            content: "";
+            background-size: 65%;
+            position: absolute;
+            cursor: pointer;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 72px;
+            width: 72px;
+            top: 0;
+            left: 0;
+        }
+    }
+
+    .radio:nth-child(1) {
+        label:after {
+            background-image: url(../../../images/devices/ac.svg);
+        }
+    }
+
+    .radio:nth-child(2) {
+        label:after {
+            background-image: url(../../../images/devices/bell.svg);
+        }
+    }
+
+    .radio:nth-child(3) {
+        label:after {
+            background-image: url(../../../images/devices/blind.svg);
+        }
+    }
+
+    .radio:nth-child(4) {
+        label:after {
+            background-image: url(../../../images/devices/bridge.svg);
+        }
+    }
+
+    .radio:nth-child(5) {
+        label:after {
+            background-image: url(../../../images/devices/camera.svg);
+        }
+    }
+
+    .radio:nth-child(6) {
+        label:after {
+            background-image: url(../../../images/devices/fan.svg);
+        }
+    }
+
+    .radio:nth-child(7) {
+        label:after {
+            background-image: url(../../../images/devices/faucets.svg);
+        }
+    }
+
+    .radio:nth-child(8) {
+        label:after {
+            background-image: url(../../../images/devices/garage.svg);
+        }
+    }
+
+    .radio:nth-child(9) {
+        label:after {
+            background-image: url(../../../images/devices/heating.svg);
+        }
+    }
+
+    .radio:nth-child(10) {
+        label:after {
+            background-image: url(../../../images/devices/humidifier.svg);
+        }
+    }
+
+    .radio:nth-child(11) {
+        label:after {
+            background-image: url(../../../images/devices/light.svg);
+        }
+    }
+
+    .radio:nth-child(12) {
+        label:after {
+            background-image: url(../../../images/devices/lock.svg);
+        }
+    }
+
+    .radio:nth-child(13) {
+        label:after {
+            background-image: url(../../../images/devices/plug.svg);
+        }
+    }
+
+    .radio:nth-child(14) {
+        label:after {
+            background-image: url(../../../images/devices/purifier.svg);
+        }
+    }
+
+    .radio:nth-child(15) {
+        label:after {
+            background-image: url(../../../images/devices/router.svg);
+        }
+    }
+
+    .radio:nth-child(16) {
+        label:after {
+            background-image: url(../../../images/devices/security.svg);
+        }
+    }
+
+    .radio:nth-child(17) {
+        label:after {
+            background-image: url(../../../images/devices/sensor.svg);
+        }
+    }
+
+    .radio:nth-child(18) {
+        label:after {
+            background-image: url(../../../images/devices/speaker.svg);
+        }
+    }
+
+    .radio:nth-child(19) {
+        label:after {
+            background-image: url(../../../images/devices/sprinkler.svg);
+        }
+    }
+
+    .radio:nth-child(20) {
+        label:after {
+            background-image: url(../../../images/devices/switch.svg);
+        }
+    }
+
+    .radio:nth-child(21) {
+        label:after {
+            background-image: url(../../../images/devices/tv.svg);
+        }
+    }
+
+}
+
+.radio-option.inline.radio-option--colours {
+    margin-bottom: 0;
+
+    .radio {
+        font-size: 0;
+        height: 50px;
+        flex: 0 0 50px;
+        flex-wrap: wrap;
+        margin-bottom: 8px;
+
+        label {
+            min-height: 100%;
+        }
+
+        input {
+            opacity: 0;
+            position: absolute;
+            left: -9999px;
+
+            &:checked,
+            &:not(checked) {
+                & + label:before {
+                    content: "";
+                    border: 0 solid $gray-primary;
+                    border-radius: 50px;
+                    background: $gray-primary;
+                    height: 50px;
+                    width: 50px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin-bottom: 5px;
+                }
+            }
+
+            &:checked {
+                & + label:after {
+                    //border: 2px solid #F5F8FD;
+                    background-color: rgba(0, 0, 0, 0.5);
+                }
+            }
+
+            &[value="Crimson"] {
+                & + label:before {
+                    background: rgb(219, 20, 61);
+                }
+            }
+
+            &[value="Dark_Orange"] {
+                & + label:before {
+                    background: rgb(255, 140, 0);
+                }
+            }
+
+            &[value="Gold"] {
+                & + label:before {
+                    background: rgb(255, 214, 0);
+                }
+            }
+
+            &[value="Violet"] {
+                & + label:before {
+                    background: rgb(237, 130, 237);
+                }
+            }
+
+            &[value="Light_Green"] {
+                & + label:before {
+                    background: rgb(142, 237, 142);
+                }
+            }
+
+            &[value="Deep_Sky_Blue"] {
+                & + label:before {
+                    background: rgb(0, 191, 255);
+                }
+            }
+
+            &[value="Navy_Blue"] {
+                & + label:before {
+                    background: rgb(0, 0, 127);
+                }
+            }
+        }
+
+        label:after {
+            content: "";
+            border-radius: 50%;
+            position: absolute;
+            cursor: pointer;
+            height: 40px;
+            width: 40px;
+            top: 5px;
+            left: 5px;
+        }
+    }
+}

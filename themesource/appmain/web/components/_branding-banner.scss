@@ -1,0 +1,16 @@
+.branding-banner {
+  background-color: white; //#041c26;
+  
+  > div {
+    margin: 0 auto;
+    max-width: 970px;
+  }
+
+  a {color: $font-base-color;}
+
+  svg,
+  img {
+    height: 34px;
+    width: 200px;
+  }
+}

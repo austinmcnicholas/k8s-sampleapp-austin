@@ -1,0 +1,10 @@
+@mixin pseudo-absolute($z: -1){
+  content: '';
+  display: block;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: $z;
+}

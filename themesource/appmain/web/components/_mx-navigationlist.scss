@@ -1,0 +1,10 @@
+.mx-navigationlist {
+  .mx-navigationlist-item {
+  	list-style: none;
+  }
+
+  &.mx-navigationlist--arrow .mx-navigationlist-item {
+  	padding: 15px 5px;
+  	background-color: transparent;
+  }
+}

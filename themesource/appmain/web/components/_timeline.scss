@@ -1,0 +1,67 @@
+.timeline-entry {
+    background: $bg-color-secondary;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    padding: 15px;
+    margin-left: 30px;
+
+    &:before {
+        content: "";
+        display: block;
+        height: 16px;
+        width: 16px;
+        background: $gray-primary;
+        position: absolute;
+        left: 0;
+        border-radius: 50%;
+        top: 20px;
+    }
+
+    &:after {
+        content: "";
+        display: block;
+        height: calc(100% - 16px);
+        width: 6px;
+        background: $gray-light;
+        position: absolute;
+        left: 5px;
+        border-radius: 30px;
+        top: 41px;
+    }
+
+    &:hover {
+        cursor: pointer;
+        transition: all 0.3s ease;
+        background: $brand-info;
+        color: #fff;
+
+        &:before {
+            transition: background 0.3s ease-out;
+            background: $brand-info;
+        }
+
+    }
+}
+
+.timeline {
+
+    li:first-child {
+        .timeline-entry {
+            &:before {
+                background: $brand-success;
+            }
+        }
+    }
+
+    li:last-child {
+        .timeline-entry {
+            &:after {
+                display: none;
+            }
+
+            &:before {
+                background: $brand-danger;
+            }
+        }
+    }
+}

@@ -1,0 +1,179 @@
+.mx-underlay{
+    opacity: 0.9;
+    background-color: $brand-inverse;
+    animation: fade-in 0.6s;
+}
+
+.modal-dialog{
+    .modal-content{
+        .modal-header{
+            .close{
+                margin-top: 0;
+                font-size: 0;
+                opacity: 0.6;
+                height: 28px;
+                width: 28px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+                transform: rotate(45deg);
+                z-index: 1;
+                &:before, &:after{
+                    content: "";
+                    height: 18px;
+                    width: 2px;
+                    background: $gray;
+                    display: block;
+                    position: relative;
+                }
+                &:before{
+                }
+                &:after{
+                    transform: rotate(90deg);
+                    left: -1.54px;
+                }
+                &:hover, &:focus{
+                    opacity: 1;
+                }
+            }
+        }
+        .modal-footer {
+            button.btn {
+                &:hover {
+                    color: #fff;
+                }
+            }
+        }
+    }
+}
+
+.modal-dialog.fullscreen{
+    top: 0px !important;
+    left: 0px !important;
+    width: 100vw !important;
+    min-height: 100vh !important;
+    padding: 10px;
+    @media only screen and (min-width: 501px){
+        padding: 0;
+        width: 500px !important;
+        right: 0 !important;
+        left: auto !important;
+        animation: slide-right 0.6s;
+    }
+    .modal-content{
+        border-radius: 12px;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px;
+        border: 0;
+        background-color: $bg-color-secondary;
+        overflow-y: scroll;
+        width: 100%;
+        padding:15px;
+        @media only screen and (min-width: 501px){
+            border-radius: 0;
+        }
+        .modal-body{
+            overflow: visible;
+        }
+        .mx-dataview{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 100%;
+            .mx-dataview-content{
+                flex: 1;
+                padding-top: 0 !important;
+                height: auto !important;
+                overflow: visible !important;
+            }
+            .mx-dataview-controls{
+                display: block;
+                .btn-block{
+                    margin-top: 10px;
+                }
+            }
+        }
+    }
+    .modal-header{
+        border: 0;
+        width: 100%;
+        h4{
+            display: none;
+        }
+    }
+}
+
+.mx-window {
+    // If popup direct child is a dataview it gets the class mx-window-view
+    &.mx-window-view .mx-window-body {
+        padding: 0;
+        // Dataview in popup
+        > .mx-dataview > .mx-dataview-content,
+        > .mx-placeholder > .mx-dataview > .mx-dataview-content {
+            padding: 20px;
+        }
+        > .mx-dataview > .mx-dataview-controls,
+        > .mx-placeholder > .mx-dataview > .mx-dataview-controls {
+            display: block;
+            border-top: 2px solid $brand-default;
+        }
+    }
+    .mx-window-body {
+        .user-role-modal {
+            ul.mx-list {
+            margin-bottom: 25px;
+            
+                li.mx-listview-item {
+                    padding-left: 35px;
+                    cursor: pointer;
+                    border-width: 1px;
+                    transition: none;
+                    &:last-child {
+                        border-top: 0;
+                    }
+                }
+                
+                input[type="checkbox"] {
+                    transform: scale(1.5);
+                    margin-left: -15px;
+                    margin-right: 10px;
+                    position: relative;
+                }
+            }
+            .mx-button {
+                margin-right: 0.3em;
+                margin-bottom: 0;
+                transition: none;
+            }
+        }
+    }
+    .mx-dataview-controls {
+        padding-bottom: 0;
+    }
+    .mx-layoutgrid {
+        padding-right: 0;
+        padding-left: 0;
+    }
+}
+
+
+@keyframes slide-right {
+  0% {
+    right: -375px;
+  }
+  100% {
+    right: 0;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  75%{
+     oapcity: 0.4;
+  }
+  100% {
+    opacity: 0.9;
+  }
+}

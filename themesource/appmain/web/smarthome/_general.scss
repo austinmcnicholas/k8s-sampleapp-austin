@@ -1,0 +1,59 @@
+.section--title {
+    margin: 0 0 8px;
+}
+
+.h-100 {
+    height: 100%;
+}
+
+.colour-select {
+    display: flex;
+    justify-content: center;
+}
+
+.sidebar-header {}
+
+.sidebar-footer {
+    background-color: #F5F8FD;
+    padding: 16px 16px 0;
+    margin-left: -20px;
+    margin-right: -20px;
+    border-top: 1px solid $gray-primary;
+
+    .btn + .btn {
+        margin-left: 8px;
+    }
+}
+
+.flexcolumn {
+    flex-direction: column;
+}
+
+.swatch {
+    height: 40px;
+    width: 40px;
+    display: block;
+    border-radius: 50%;
+}
+
+.self-end {
+    align-self: flex-end;
+}
+
+.height100 {
+    height: 100%;
+
+    .mx-dataview-content,
+    .row {
+        height: 100% !important;
+    }
+}
+
+.padding-large {
+    padding: 16px;
+}
+
+.image-large {
+    height: 48px;
+}
+

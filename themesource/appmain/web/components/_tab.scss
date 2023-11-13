@@ -1,0 +1,62 @@
+.nav-tabs.mx-tabcontainer-tabs {
+   
+    li {
+        flex: 1;
+        
+
+        a {
+            color: $font-base-color;
+            padding: 15px !important;
+            border-radius: 0;
+            // background: #fff !important;
+        }
+
+        &.active a,
+        &.active:hover {
+            background-color: $brand-info !important;
+            
+            // border: 0 !important;
+            color: #fff !important;
+            border-radius: 0;
+        }
+    }
+}
+
+.tab-content {
+    .tab-pane {
+        &.active {}
+    }
+}
+
+.mx-tabcontainer {
+    // margin: -15px;
+}
+
+.tasks-tabs-container {
+    background-color: #fff;
+    
+    .tasks-tabs {
+        &.mx-tabcontainer {
+            margin: 0;
+
+            ul {
+                margin: 0;
+                li {
+                    a {
+                        // border-radius: 0;
+                    }
+                    border-bottom: 1px solid #dcdcdc;
+
+                    &:last-of-type {
+                        border: none;
+                    }
+
+                    &.mx-listview-empty {
+                        margin: 20px 0;
+                    }
+                }
+            }
+        }
+    }
+
+}

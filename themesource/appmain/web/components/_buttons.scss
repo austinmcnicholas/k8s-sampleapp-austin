@@ -1,0 +1,248 @@
+.btn-default {
+    background: transparent;
+    color: $bgcolor;
+    border-color: $bgcolor;
+    //color: #fff;
+
+    &:hover {
+        color: #fff;
+        background: darken($bgcolor, 10%);
+    }
+}
+
+.btn-primary {
+    background: $bgcolor;
+    border-color: $bgcolor;
+
+    &:hover {
+        background: $bgcolor;
+        border-color: $bgcolor;
+    }
+}
+
+// .btn-inverse {}
+
+// .btn-success {}
+
+// .btn-info {}
+
+// .btn-warning {}
+
+// .btn-danger {}
+
+// Custom buttons -------------------------------------
+.btn-logout {
+    background: transparent;
+    color: white;
+
+    &:hover,
+    &:focus {
+        background: transparent;
+    }
+}
+
+.btn-pill {
+    border-radius: 50px;
+}
+
+.btn-dropdown {
+    font-size: 1.1em;
+    padding: 0.6em 2em 0.6em 1em;
+
+    &:after {
+        content: "";
+        border: solid;
+        border-width: 0 2px 2px 0;
+        display: inline-block;
+        padding: 3px;
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+        margin-left: .6em;
+        top: -3px;
+        left: 0.6em;
+        position: relative;
+    }
+}
+
+.controlgroup .btn {
+    margin-bottom: 0;
+}
+
+.btn-filter {
+    &.open {
+        .caret {}
+    }
+
+    .caret {
+        left: 0.6em;
+        position: relative;
+        border: solid;
+        border-width: 0 2px 2px 0;
+        display: inline-block;
+        padding: 3px;
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+        margin-left: .6em;
+        top: -3px;
+        left: 0.6em;
+        position: relative;
+    }
+
+    .dropdown-button {
+        font-size: 1.1em;
+        padding: 0.6em 2em 0.6em 1em;
+
+
+        &.btn-primary {
+            & ~ .dropdown-menu {
+                background: $brand-primary;
+
+                a {
+                    color: #fff;
+                }
+            }
+        }
+
+        &.btn-default {
+            & ~ .dropdown-menu {
+                background: $brand-default;
+
+                a {
+                    color: #fff;
+                }
+            }
+        }
+
+        &.btn-warning {
+            & ~ .dropdown-menu {
+                background: $brand-warning;
+
+                a {
+                    color: #fff;
+                }
+            }
+        }
+
+        &.btn-danger {
+            & ~ .dropdown-menu {
+                background: $brand-danger;
+
+                a {
+                    color: #fff;
+                }
+            }
+        }
+
+        &.btn-success {
+            & ~ .dropdown-menu {
+                background: $brand-success;
+
+                a {
+                    color: #fff;
+                }
+            }
+        }
+
+        &.btn-info {
+            & ~ .dropdown-menu {
+                background: $brand-info;
+
+                a {
+                    color: #fff;
+                }
+            }
+        }
+    }
+
+    .dropdown-menu {
+        padding: 0.6em;
+        margin-top: 0;
+        border: 0;
+        box-shadow: none;
+
+        a {
+            display: block;
+            padding: 0.6em 1em;
+        }
+    }
+
+}
+
+.btn-notification {
+    .dropdown-button {
+        font-size: 1em;
+        font-weight: bold;
+        padding: 0;
+        height: 30px;
+        width: 30px;
+
+        .caret {
+            display: none;
+        }
+    }
+
+    .dropdown-menu {
+        min-width: 300px;
+        padding: 5px;
+    }
+
+    a {
+        padding: 15px;
+        display: block;
+        color: $font-color-headers
+    }
+}
+
+.control-btns {
+    .col {
+        padding: 7.5px;
+    }
+
+    .btn {
+        margin-bottom: 0;
+    }
+}
+
+.btn-animated {
+    background: transparent;
+    color: $bgcolor;
+    border-color: $bgcolor;
+    width: auto;
+    padding: 10px 25px;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+
+    &::before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: $bgcolor;
+        -webkit-transform: scaleY(0);
+        transform: scaleY(0);
+        -webkit-transform-origin: 50% 100%;
+        transform-origin: 50% 100%;
+        -webkit-transition-property: transform;
+        transition-property: transform;
+        -webkit-transition-duration: 0.2s;
+        transition-duration: 0.2s;
+        -webkit-transition-timing-function: ease-out;
+        transition-timing-function: ease-out;
+    }
+  
+    &:hover {
+        color: #fff;
+
+        &:before {    
+            -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+        }
+    }
+}

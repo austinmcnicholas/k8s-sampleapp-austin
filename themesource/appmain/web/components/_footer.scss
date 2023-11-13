@@ -1,0 +1,35 @@
+.footer {
+  background-color: #222;
+  background-image: linear-gradient(0deg, #333 0%, #222 100%);
+  color: white;
+  padding: 5vh 0;
+
+  &__header {
+    color: white !important;
+    font-size: 1.1em;
+    font-weight: bold;
+    margin: 0 0 1em 0;
+  }
+
+  @media (min-width: $screen-md) {
+    .footer-col-right {
+      text-align: right;
+    }
+  }
+
+  .mx-navigationlist {
+    .mx-navigationlist-item {
+      background-color: transparent;
+      border: 0;
+      color: #e8e8e8;
+      font-size: .95em;
+      padding: 0;
+      margin-bottom: 4px;
+      transition: none;
+      &:hover {
+        background-color: transparent;
+        text-decoration: underline; 
+      }
+    }
+  }
+}

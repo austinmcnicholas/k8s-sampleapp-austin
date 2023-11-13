@@ -1,0 +1,356 @@
+.card--home {
+    border-radius: 10px;
+    overflow: hidden;
+    height: 400px;
+    position: relative;
+    margin-right: 32px;
+
+    &:before {
+        background-color: rgba(0, 0, 0, 0.6);
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+    }
+    .card--home {
+        &--background {
+            z-index: 1;
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            object-position: center center
+        }
+
+        &--title,
+        &--metrictitle {
+            color: #fff;
+            margin: 0 0 8px;
+        }
+
+        &--metrictitle {
+            font-weight: bold;
+            font-size: 38px;
+        }
+
+        &--body {
+            z-index: 2;
+            position: relative;
+            color: #fff;
+            height: 100%;
+            padding: 32px;
+            display: flex;
+            flex-direction: column;
+            align-content: space-between;
+            justify-content: space-between;
+            cursor: pointer;
+        }
+
+        &--metrics {
+            width: 100%;
+        }
+
+        &--metric {
+            margin-right: 32px;
+        }
+    }
+}
+
+.card--room {
+    border-radius: 0;
+    overflow: hidden;
+    height: 400px;
+    position: relative;
+    cursor: pointer;
+
+    &:before {
+        background-color: rgba(0, 0, 0, 0.6);
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+    }
+
+    .card--room {
+        &--background {
+            z-index: 1;
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            object-position: center center
+        }
+
+        &--title,
+        &--metrictitle {
+            color: #fff;
+            margin: 0 0 8px;
+        }
+
+        &--metrictitle {
+            font-weight: bold;
+            font-size: 38px;
+        }
+
+        &--body {
+            margin: 0 auto;
+            z-index: 2;
+            position: relative;
+            color: #fff;
+            height: 100%;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            align-content: space-between;
+            justify-content: space-between;
+        }
+
+        &--metrics {
+            width: 100%;
+        }
+
+        &--metric {
+            margin-right: 32px;
+        }
+    }
+}
+
+.card--scene {
+    background-color: #000;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 100px;
+    position: relative;
+    margin-right: 16px;
+    padding: 16px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    opacity: 0.5;
+    //animation: inactive 0.4s ease;
+
+    &.active {
+        background-color: var(--color-green);
+        opacity: 1;
+        //animation: active 0.4s ease;
+    }
+
+    &--action {
+        z-index: 10;
+        position: absolute;
+        right: 0;
+        padding: 0 16px;
+    }
+
+    &--description {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-content: space-between;
+    }
+
+    &--title {
+        color: #fff;
+    }
+
+    &--image {
+        height: 28px;
+        width: 28px;
+        object-fit: contain;
+        object-position: center;
+    }
+}
+
+.card--accessory {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    margin-right: 16px;
+    padding: 16px;
+    height: calc(160px - 16px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    opacity: 0.5;
+    //animation: inactive 0.4s ease;
+
+    &.active {
+        background-color: #fff;
+        opacity: 1;
+        //animation: active 0.4s ease;
+    }
+
+    &--action {
+        z-index: 10;
+        position: absolute;
+        right: 0;
+        padding: 0 16px;
+    }
+
+    &--data {
+        color: #000;
+        font-size: 28px;
+    }
+
+    &--description {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-content: space-between;
+    }
+
+    &--title {
+        color: #000;
+        width: 100%;
+        display: block;
+    }
+
+    &--image {
+        position: relative;
+        height: 36px;
+        width: auto;
+        object-fit: cover;
+        object-position: right;
+        margin-bottom: 8px;
+    }
+}
+
+.card--sensor {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    margin-right: 0;
+    margin-bottom: 0;
+    padding: 16px;
+    box-shadow: 0 0px 10px rgba(0, 0, 0, 0.1);
+    opacity: 1;
+    //animation: inactive 0.4s ease;
+
+    &.active {
+        background-color: #fff;
+        opacity: 1;
+        //animation: active 0.4s ease;
+    }
+
+    &--action {
+        z-index: 10;
+        position: absolute;
+        right: 0;
+        padding: 0 16px;
+    }
+
+    &--data {
+        color: #000;
+        font-size: 36px;
+    }
+
+    &--description {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-content: space-between;
+    }
+
+    &--title {
+        color: #000;
+        width: 100%;
+        display: block;
+    }
+
+    &--image {
+        position: relative;
+        height: 36px;
+        width: auto;
+        object-fit: cover;
+        object-position: right;
+        margin-bottom: 8px;
+    }
+}
+
+.card--small {
+    height: calc(90px - 8px);
+    padding: 8px;
+    box-shadow: none;
+    border: 1px solid #eee;
+    opacity: 0.5;
+    margin-right: 8px;
+
+    &.display {
+        margin-bottom: 8px;
+        width: 90px;
+    }
+
+    .card--accessory--action {
+        padding: 0px;
+    }
+
+    .card--accessory--image {
+        position: relative;
+        height: 28px;
+        width: auto;
+        object-fit: cover;
+        object-position: right;
+        margin-bottom: 4px;
+    }
+
+    .card--accessory--title {
+        font-size: 10px;
+        overflow: hidden;
+        font-weight: bold;
+        line-clamp: 1;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        width: 60px;
+
+    }
+
+    .card--accessory--value {
+        font-size: 10px;
+        overflow: hidden;
+
+    }
+}
+
+
+@keyframes active {
+    0% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+
+    50% {
+        transform: scale(1.1);
+        opacity: 0.75;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 0.95;
+    }
+}
+
+@keyframes inactive {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.1);
+        opacity: 0.75;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+}

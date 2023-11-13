@@ -1,0 +1,71 @@
+$shadow-shorter: 0 1px 2px rgba(0, 0, 0, 0.07),
+0 2px 4px rgba(0, 0, 0, 0.07),
+0 4px 8px rgba(0, 0, 0, 0.07),
+0 8px 16px rgba(0, 0, 0, 0.07);
+
+//== Gray Shades
+//## Different gray shades to be used for our variables and components
+$gray-darker: #222222;
+$gray-dark: #333333;
+$gray: #555555;
+$gray-primary: #b8b8b8;
+$gray-light: #dcdcdc;
+$gray-lighter: #F4F4F4;
+
+//== Step 1: Brand Colors
+$brand-default: #DDDDDD;
+$brand-primary: rgba(252, 117, 6, 1);
+$brand-inverse: $gray;
+$brand-info: #152256;
+$brand-success: #76CA02;
+$brand-warning: #F99B1D;
+$brand-danger: #ED1C24;
+
+// Used for other variables
+$default-border-color: $gray-primary;
+
+//== Step 3: Typography
+$font-family-import: "https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700";
+$font-family-base: "Open Sans",
+sans-serif;
+$font-base-size: 14px;
+$font-base-color: #000;
+$link-color: $brand-primary;
+$font-size-h1: 32px;
+$font-size-h2: 28px;
+$font-size-h3: 24px;
+$font-size-h4: 18px;
+$font-color-headers: #17347B;
+
+//== Step 2: UI Customization
+
+// Topbar
+$topbar-bg: #FFFFFF;
+$navtopbar-border-color: $default-border-color;
+$topbar-border-color: $navtopbar-border-color;
+$topbar-minimalheight: 60px;
+$navtopbar-color: $font-base-color;
+$navbar-brand-name: $default-border-color;
+$brand-logo: false;
+$brand-logo-height: 40px;
+$brand-logo-width: 40px;
+
+// Sidebar
+$sidebar-bg: #252C36;
+$navsidebar-color: #FFFFFF;
+$navsidebar-color-hover: $navsidebar-color;
+
+// Backgrounds
+$bg-color: #FFFFFF;
+$bg-color-secondary: #F5F8FD;
+$bg-color-teritary: #fafafa;
+
+// == Old variables used in theme customizer to the new lib variables
+$font-size-default: $font-base-size;
+$font-color-default: $font-base-color;
+$border-color-default: $default-border-color;
+$font-color-header: $font-color-headers;
+
+$important-helpers: true;
+
+$font-color-detail:                     $gray !default;

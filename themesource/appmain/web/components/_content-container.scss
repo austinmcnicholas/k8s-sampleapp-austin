@@ -1,0 +1,6 @@
+.content-container {
+  // minimum height = screen height minus
+  // - header
+  // - footer
+  min-height: calc(100vh - (86px + 186px));
+}

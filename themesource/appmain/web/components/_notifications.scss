@@ -1,0 +1,60 @@
+.notifications {
+    .notification-view {
+        display: none;
+        position: absolute;
+        background: #fff;
+        min-width: 300px;
+        padding: 5px;
+        border-radius: 6px;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
+        right: 0;
+
+        a {
+            padding: 15px;
+            display: block;
+            color: $font-color-headers
+        }
+    }
+
+    &.open {
+        .notification-view {
+            display: block;
+        }
+    }
+
+    .notification-btn {
+        position: relative;
+        height: 30px;
+        width: 30px;
+        z-index: 1;
+
+        .btn-count {
+            display: block;
+            height: 100%;
+            width: 100%;
+            z-index: 1;
+            border: 0;
+            background: transparent !important;
+        }
+
+        .text-count {
+            position: absolute;
+            color: #fff;
+            height: 100%;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            @extend .btn-warning;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 6px;
+
+            &:hover,
+            &:focus {
+                // background: mix($btn-warning-bg, black, 80%);
+            }
+        }
+    }
+}

@@ -1,0 +1,551 @@
+[
+	{
+		"Status": "Pending",
+		"Date": "2021-01-23T22:07:50Z",
+		"BillItems": [
+			{
+				"ProductID": "HT-1118",
+				"Quantity": 1
+			},
+			{
+				"ProductID": "HT-1066",
+				"Quantity": 1
+			}
+		],
+		"Customer": {
+			"CustomerID": "0002"
+		}
+	},
+	{
+		"Status": "Pending",
+		"Date": "2021-01-10T16:07:50Z",
+		"BillItems": [
+			{
+				"ProductID": "HT-1254",
+				"Quantity": 2
+			},
+			{
+				"ProductID": "HT-1042",
+				"Quantity": 1
+			},
+			{
+				"ProductID": "HT-1119",
+				"Quantity": 2
+			}
+		],
+		"Customer": {
+			"CustomerID": "0002"
+		}
+	},
+	{
+		"Status": "Paid",
+		"Date": "2021-02-04T13:07:50Z",
+		"BillItems": [
+			{
+				"ProductID": "HT-1500",
+				"Quantity": 1
+			}
+		],
+		"Customer": {
+			"CustomerID": "0002"
+		}
+	},
+	{
+		"Status": "Pending",
+		"Date": "2021-01-12T22:07:50Z",
+		"BillItems": [
+			{
+				"ProductID": "HT-1050",
+				"Quantity": 1
+			},
+			{
+				"ProductID": "HT-1106",
+				"Quantity": 1
+			},
+			{
+				"ProductID": "HT-1032",
+				"Quantity": 1
+			},
+			{
+				"ProductID": "HT-1253",
+				"Quantity": 1
+			},
+			{
+				"ProductID": "HT-2001",
+				"Quantity": 1
+			}
+		],
+		"Customer": {
+			"CustomerID": "0001"
+		}
+	},
+	{
+		"Status": "Pending",
+		"Date": "2021-01-02T16:07:50Z",
+		"BillItems": [
+			{
+				"ProductID": "HT-2026",
+				"Quantity": 3
+			},
+			{
+				"ProductID": "HT-1113",
+				"Quantity": 1
+			},
+			{
+				"ProductID": "HT-1092",
+				"Quantity": 1
+			}
+		],
+		"Customer": {
+			"CustomerID": "0001"
+		}
+	},
+	{
+		"Status": "Pending",
+		"Date": "2021-02-03T13:07:50Z",
+		"BillItems": [
+			{
+				"ProductID": "HT-1097",
+				"Quantity": 1
+			},
+			{
+				"ProductID": "HT-7010",
+				"Quantity": 1
+			}
+		],
+		"Customer": {
+			"CustomerID": "0001"
+		}
+	},
+	{
+		"Status": "Pending",
+		"Date": "2020-11-12T22:07:50Z",
+		"BillItems": [
+			{
+				"ProductID": "HT-1050",
+				"Quantity": 1
+			},
+			{
+				"ProductID": "HT-1106",
+				"Quantity": 1
+			},
+			{
+				"ProductID": "HT-1032",
+				"Quantity": 1
+			},
+			{
+				"ProductID": "HT-1253",
+				"Quantity": 1
+			},
+			{
+				"ProductID": "HT-2001",
+				"Quantity": 1
+			}
+		],
+		"Customer": {
+			"CustomerID": "0003"
+		}
+	},
+	{
+		"Status": "Pending",
+		"Date": "2021-01-02T16:07:50Z",
+		"BillItems": [
+			{
+				"ProductID": "HT-2026",
+				"Quantity": 3
+			},
+			{
+				"ProductID": "HT-1113",
+				"Quantity": 1
+			},
+			{
+				"ProductID": "HT-1092",
+				"Quantity": 1
+			}
+		],
+		"Customer": {
+			"CustomerID": "0004"
+		}
+	},
+	{
+		"Status": "Pending",
+		"Date": "2021-02-03T13:07:50Z",
+		"BillItems": [
+			{
+				"ProductID": "HT-1037",
+				"Quantity": 1
+			},
+			{
+				"ProductID": "HT-7010",
+				"Quantity": 1
+			}
+		],
+		"Customer": {
+			"CustomerID": "0003"
+		}
+	},
+	{
+		"Status": "Paid",
+		"Date": "2020-07-01T13:07:50Z",
+		"BillItems": [
+			{
+				"ProductID": "XXXX",
+				"Quantity": 1
+			}
+		],
+		"Customer": {
+			"CustomerID": "0001"
+		}
+	},
+	{
+		"Status": "Paid",
+		"Date": "2020-07-01T13:07:50Z",
+		"BillItems": [
+			{
+				"ProductID": "XXXX",
+				"Quantity": 1
+			}
+		],
+		"Customer": {
+			"CustomerID": "0002"
+		}
+	},
+	{
+		"Status": "Paid",
+		"Date": "2020-07-01T13:07:50Z",
+		"BillItems": [
+			{
+				"ProductID": "XXXX",
+				"Quantity": 1
+			}
+		],
+		"Customer": {
+			"CustomerID": "0004"
+		}
+	},
+	{
+		"Status": "Paid",
+		"Date": "2020-08-01T13:07:50Z",
+		"BillItems": [
+			{
+				"ProductID": "XXXX",
+				"Quantity": 1
+			}
+		],
+		"Customer": {
+			"CustomerID": "0001"
+		}
+	},
+	{
+		"Status": "Paid",
+		"Date": "2020-08-01T13:07:50Z",
+		"BillItems": [
+			{
+				"ProductID": "XXXX",
+				"Quantity": 1
+			}
+		],
+		"Customer": {
+			"CustomerID": "0002"
+		}
+	},
+	{
+		"Status": "Paid",
+		"Date": "2020-08-01T13:07:50Z",
+		"BillItems": [
+			{
+				"ProductID": "XXXX",
+				"Quantity": 1
+			}
+		],
+		"Customer": {
+			"CustomerID": "0004"
+		}
+	},
+	{
+		"Status": "Paid",
+		"Date": "2020-09-01T13:07:50Z",
+		"BillItems": [
+			{
+				"ProductID": "XXXX",
+				"Quantity": 1
+			}
+		],
+		"Customer": {
+			"CustomerID": "0001"
+		}
+	},
+	{
+		"Status": "Paid",
+		"Date": "2020-09-01T13:07:50Z",
+		"BillItems": [
+			{
+				"ProductID": "XXXX",
+				"Quantity": 1
+			}
+		],
+		"Customer": {
+			"CustomerID": "0002"
+		}
+	},
+	{
+		"Status": "Paid",
+		"Date": "2020-09-01T13:07:50Z",
+		"BillItems": [
+			{
+				"ProductID": "XXXX",
+				"Quantity": 1
+			}
+		],
+		"Customer": {
+			"CustomerID": "0004"
+		}
+	},
+	{
+		"Status": "Paid",
+		"Date": "2020-10-01T13:07:50Z",
+		"BillItems": [
+			{
+				"ProductID": "XXXX",
+				"Quantity": 1
+			}
+		],
+		"Customer": {
+			"CustomerID": "0001"
+		}
+	},
+	{
+		"Status": "Paid",
+		"Date": "2020-10-01T13:07:50Z",
+		"BillItems": [
+			{
+				"ProductID": "XXXX",
+				"Quantity": 1
+			}
+		],
+		"Customer": {
+			"CustomerID": "0002"
+		}
+	},
+	{
+		"Status": "Paid",
+		"Date": "2020-10-01T13:07:50Z",
+		"BillItems": [
+			{
+				"ProductID": "XXXX",
+				"Quantity": 1
+			}
+		],
+		"Customer": {
+			"CustomerID": "0004"
+		}
+	},
+	{
+		"Status": "Paid",
+		"Date": "2020-11-01T13:07:50Z",
+		"BillItems": [
+			{
+				"ProductID": "XXXX",
+				"Quantity": 1
+			}
+		],
+		"Customer": {
+			"CustomerID": "0001"
+		}
+	},
+	{
+		"Status": "Paid",
+		"Date": "2020-11-01T13:07:50Z",
+		"BillItems": [
+			{
+				"ProductID": "XXXX",
+				"Quantity": 1
+			}
+		],
+		"Customer": {
+			"CustomerID": "0002"
+		}
+	},
+	{
+		"Status": "Paid",
+		"Date": "2020-11-01T13:07:50Z",
+		"BillItems": [
+			{
+				"ProductID": "YYYY",
+				"Quantity": 1
+			}
+		],
+		"Customer": {
+			"CustomerID": "0003"
+		}
+	},
+	{
+		"Status": "Paid",
+		"Date": "2020-11-01T13:07:50Z",
+		"BillItems": [
+			{
+				"ProductID": "XXXX",
+				"Quantity": 1
+			}
+		],
+		"Customer": {
+			"CustomerID": "0004"
+		}
+	},
+	{
+		"Status": "Paid",
+		"Date": "2020-12-01T13:07:50Z",
+		"BillItems": [
+			{
+				"ProductID": "XXXX",
+				"Quantity": 1
+			}
+		],
+		"Customer": {
+			"CustomerID": "0001"
+		}
+	},
+	{
+		"Status": "Paid",
+		"Date": "2020-12-01T13:07:50Z",
+		"BillItems": [
+			{
+				"ProductID": "XXXX",
+				"Quantity": 1
+			}
+		],
+		"Customer": {
+			"CustomerID": "0002"
+		}
+	},
+	{
+		"Status": "Paid",
+		"Date": "2020-12-01T13:07:50Z",
+		"BillItems": [
+			{
+				"ProductID": "YYYY",
+				"Quantity": 1
+			}
+		],
+		"Customer": {
+			"CustomerID": "0003"
+		}
+	},
+	{
+		"Status": "Paid",
+		"Date": "2020-12-01T13:07:50Z",
+		"BillItems": [
+			{
+				"ProductID": "XXXX",
+				"Quantity": 1
+			}
+		],
+		"Customer": {
+			"CustomerID": "0004"
+		}
+	},
+	{
+		"Status": "Paid",
+		"Date": "2021-01-01T13:07:50Z",
+		"BillItems": [
+			{
+				"ProductID": "XXXX",
+				"Quantity": 1
+			}
+		],
+		"Customer": {
+			"CustomerID": "0001"
+		}
+	},
+	{
+		"Status": "Pending",
+		"Date": "2021-01-01T13:07:50Z",
+		"BillItems": [
+			{
+				"ProductID": "XXXX",
+				"Quantity": 1
+			}
+		],
+		"Customer": {
+			"CustomerID": "0002"
+		}
+	},
+	{
+		"Status": "Paid",
+		"Date": "2021-01-01T13:07:50Z",
+		"BillItems": [
+			{
+				"ProductID": "YYYY",
+				"Quantity": 1
+			}
+		],
+		"Customer": {
+			"CustomerID": "0003"
+		}
+	},
+	{
+		"Status": "Pending",
+		"Date": "2021-01-01T13:07:50Z",
+		"BillItems": [
+			{
+				"ProductID": "XXXX",
+				"Quantity": 1
+			}
+		],
+		"Customer": {
+			"CustomerID": "0004"
+		}
+	},
+	{
+		"Status": "Pending",
+		"Date": "2021-02-01T13:07:50Z",
+		"BillItems": [
+			{
+				"ProductID": "XXXX",
+				"Quantity": 1
+			}
+		],
+		"Customer": {
+			"CustomerID": "0001"
+		}
+	},
+	{
+		"Status": "Pending",
+		"Date": "2021-02-01T13:07:50Z",
+		"BillItems": [
+			{
+				"ProductID": "XXXX",
+				"Quantity": 1
+			}
+		],
+		"Customer": {
+			"CustomerID": "0002"
+		}
+	},
+	{
+		"Status": "Pending",
+		"Date": "2021-02-01T13:07:50Z",
+		"BillItems": [
+			{
+				"ProductID": "YYYY",
+				"Quantity": 1
+			}
+		],
+		"Customer": {
+			"CustomerID": "0003"
+		}
+	},
+	{
+		"Status": "Pending",
+		"Date": "2021-02-01T13:07:50Z",
+		"BillItems": [
+			{
+				"ProductID": "XXXX",
+				"Quantity": 1
+			}
+		],
+		"Customer": {
+			"CustomerID": "0004"
+		}
+	}
+]

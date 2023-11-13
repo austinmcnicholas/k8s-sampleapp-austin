@@ -1,0 +1,26 @@
+// Lined
+.listview-lined.mx-listview {
+    li {
+        border-color: 1px solid $brand-default;
+        border-left: 0;
+        border-right: 0;
+        border-radius: 0;
+        padding: 10px;
+
+        &:first-child,
+        &:last-child {
+            border-radius: 0;
+        }
+    }
+}
+
+.loadmore-none {
+    .mx-listview-loadMore {
+        display: none;
+    }
+}
+
+.widget-pagination .pagination {
+    display: flex;
+    justify-content: flex-end;
+}

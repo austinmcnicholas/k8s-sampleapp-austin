@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>14 Symbols</title>
+  <meta name="viewport" content="width=device-width" />
+  <style>
+    html {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      color: black;
+      background: #e4e4e4;
+      text-align: center;
+    }
+    body {
+      margin: 0;
+      padding-top: 2.5rem;
+    }
+    main {
+      padding: 1rem .5rem;
+    }
+    button {
+      font: inherit;
+      background: transparent;
+      border: none;
+    }
+    button::-moz-focus-inner {
+      padding: 0;
+      border: none;
+    }
+    .symbols-dictionary {
+      border: 0 !important;
+      clip: rect(0 0 0 0) !important;
+      height: 1px !important;
+      margin: -1px !important;
+      overflow: hidden !important;
+      padding: 0 !important;
+      position: absolute !important;
+      width: 1px !important;
+    }
+    .gss-toolbar {
+      position: absolute;
+      z-index: 100;
+      top: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      border-bottom: solid 1px #c6c6c6;
+      text-align: left;
+      background: white;
+    }
+    .gss-toolbar--active {
+      position: fixed;
+    }
+    .gss-toolbar > * {
+      display: inline-block;
+      vertical-align: middle;
+      white-space: nowrap;
+      margin: 0;
+      padding: .5rem 1rem;
+      line-height: 1.35;
+    }
+    .gss-toolbar h1 {
+      display: none;
+      font: inherit;
+    }
+    .gss-toolbar:not(.gss-toolbar--active) h1 {
+      display: inline-block;
+    }
+    .gss-toolbar:not(.gss-toolbar--active) h1 ~ * {
+      display: none !important;
+    }
+    .gss-toolbar.gss-toolbar > * + * {
+      border-left: solid 1px #c6c6c6;
+    }
+    .gss-toolbar > *:focus {
+      outline: none;
+      box-shadow: inset 0 0 0 1px #c71585;
+    }
+    .gss-toolbar [hidden] {
+      display: none;
+    }
+    .gss-toolbar-filter {
+      width: 15rem;
+      flex-grow: 10;
+      border: none;
+      font: inherit;
+    }
+    .gss-toolbar button {
+      position: relative;
+      z-index: 1;
+      font-size: 87.5%;
+      background-color: #f4f4f4;
+    }
+    .gss-toolbar-filter + button {
+      margin-left: auto;
+    }
+    .gss-toolbar button[aria-pressed="true"] {
+      z-index: 2;
+      color: #ddd;
+      background-color: #444;
+      outline-color: rgba(255,255,255,.6);
+    }
+    .gss-toolbar .gss-toolbar-list {
+      font-size: 100%;
+    }
+    .gss-toolbar button > svg {
+      fill: currentColor;
+      vertical-align: -2px;
+      margin: 0 4px 0 2px;
+    }
+    .gss-toolbar-list[aria-pressed="true"] ~ .gss-toolbar-orig {
+      display: none;
+    }
+    @media (max-width: 40em) {
+      .gss-toolbar-filter {
+        margin-left: 0 !important;
+      }
+      .gss-toolbar-filter ~ * {
+        display: none !important;
+      }
+    }
+
+    /* Grid of small icons */
+    .gss-iconlist ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-content: center;
+      min-height: calc(100vh - 100px);
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .gss-iconlist-item {
+      display: inline-block;
+      vertical-align: top;
+      margin: .5rem;
+    }
+    .gss-iconlist-item a {
+      display: block;
+      box-sizing: border-box;
+      min-height: 100%;
+      border-radius: .35em;
+      padding: .5rem;
+      color: inherit;
+      background-color: #fff;
+      transition: all 100ms;
+    }
+    .gss-iconlist-item a:hover,
+    .gss-iconlist-item a:focus {
+      outline: none;
+      color: #fff;
+      background-color: rgba(0,0,0,.8);
+    }
+    .gss-iconlist-item a > svg {
+      width: 2.75rem;
+      height: 2.75rem;
+      vertical-align: top;
+      fill: currentColor;
+    }
+    @media (min-width: 40em) {
+      .gss-iconlist-item a > svg {
+        width: 3.5rem;
+        height: 3.5rem;
+      }
+    }
+
+    /* Grid of big icons with lots of info */
+    .gss-iconboxes {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0;
+    }
+    .gss-iconboxes[hidden] {
+      display: none;
+    }
+    .gss-iconboxes::after {
+      content: '';
+      flex-grow: 1000;
+    }
+    .gss-iconbox {
+      display: inline-block;
+      vertical-align: top;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      width: calc(100% - 1rem);
+      max-width: 40rem;
+      overflow: hidden;
+      margin: .5rem;
+      border-radius: .5rem;
+      background-color: #fff;
+    }
+    .gss-iconbox:focus {
+      outline: none;
+      box-shadow: 0 0 0 4px #e960b2;
+    }
+    .gss-iconbox[data-state="info"] {
+      background: #f4f4f4;
+    }
+    @media (min-width:40em) {
+      .gss-iconbox { width: calc(50% - 1rem); }
+    }
+    @media (min-width:60em) {
+      .gss-iconbox { width: calc(33.33% - 1rem); }
+    }
+    @media (min-width:80em) {
+      .gss-iconbox { width: calc(25% - 1rem); }
+    }
+    @media (min-width:100em) {
+      main { width: 105rem; max-width: calc(100% - 1rem); margin: 0 auto; }
+      .gss-iconbox { width: calc(20% - 1rem); }
+    }
+    .gss-iconbox-header,
+    .gss-iconbox-head2 {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 0;
+      padding: 0 .5rem;
+      font-size: 87.5%;
+      color: #444;
+      border-bottom: 1px solid #e6e6e6;
+    }
+    .gss-iconbox-header {
+      background-color: #fff;
+    }
+    .gss-iconbox[data-state="info"] .gss-iconbox-header,
+    .gss-iconbox:not([data-state="info"]) .gss-iconbox-head2 {
+      display: none;
+    }
+    .gss-iconbox-header > *,
+    .gss-iconbox-head2 > * {
+      display: inline-block;
+      white-space: nowrap;
+      padding: .75rem .5rem;
+    }
+    .gss-iconbox-head2 > :nth-child(1) {
+      margin-right: auto;
+      text-align: left;
+    }
+    .gss-iconbox-header h2 {
+      position: relative;
+      top: -1px;
+      overflow: hidden;
+      text-align: left;
+      text-overflow: ellipsis;
+      margin: 0;
+      font: inherit;
+      font-size: 115%;
+      line-height: 1;
+      color: black;
+    }
+    .gss-iconbox-header > span {
+      color: #777;
+    }
+    .gss-iconbox-wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      flex-grow: 1;
+      position: relative;
+      overflow: hidden;
+      min-height: 8rem;
+    }
+    .gss-iconbox:not([data-state="info"]) .gss-iconbox-wrapper {
+      background-color: #fafafa;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="rgb(238,238,238)" width="100" height="100"><rect x="0" y="0" width="50" height="50"></rect><rect x="50" y="50" width="50" height="50"></rect></svg>');
+      background-size: 24px 24px;
+    }
+    @media (min-width:40em) {
+      .gss-iconbox-wrapper { min-height: 10rem; }
+    }
+    .gss-iconbox-icon {
+      padding: 1rem;
+    }
+    .gss-iconbox[data-state="info"] .gss-iconbox-icon {
+      display: none;
+    }
+    .gss-iconbox-icon > svg {
+      fill: currentColor;
+      vertical-align: middle;
+      width: 6rem;
+      height: 6rem;
+      max-width: 16rem;
+      max-height: 16rem;
+    }
+    @media (min-width:40em) {
+      .gss-iconbox-icon > svg {
+        width: 8rem;
+        height: 8rem;
+      }
+    }
+    .gss-showColor svg[id^="gss-icon-"] {
+      color: red;
+      fill: red;
+    }
+    .gss-showOriginal .gss-iconbox-icon > svg {
+      margin-top: 1rem;
+      outline: solid 1px rgba(0,0,0,.5);
+      box-shadow: 0 0 0 250px rgba(255,255,255,.8);
+    }
+    @media (min-resolution: 2dppx) {
+      .gss-showOriginal .gss-iconbox-icon > svg {
+        outline-width: .5px;
+      }
+    }
+    .gss-showOriginal .gss-iconbox-icon::after {
+      content: attr(data-dimensions);
+      display: table;
+      margin: .5rem auto 0;
+      padding: 1px 3px;
+      font-size: 75%;
+      color: #444;
+    }
+    .gss-iconbox-code {
+      flex-grow: 1;
+      margin: 0;
+      padding: 1rem;
+      text-align: left;
+      font: inherit;
+      line-height: 1.35;
+      background-color: #f4f4f4;
+    }
+    .gss-iconbox-code code {
+      display: block;
+      white-space: pre-wrap;
+      font-family: monospace, monospace;
+      font-size: 80%;
+    }
+    /* can't display none: copy won't work */
+    .gss-iconbox[data-state="icon"] .gss-iconbox-code {
+      position: absolute;
+      top: -200px;
+      opacity: 0;
+      pointer-events: none;
+    }
+    .gss-iconbox-action {
+      display: none;
+      border-top: 1px solid #e6e6e6;
+    }
+    .gss-iconbox[data-state] .gss-iconbox-action {
+      display: block;
+      display: flex;
+    }
+    .gss-iconbox-action > * {
+      flex-grow: 1;
+      flex-basis: 33.3%;
+      padding: .8rem .5rem;
+      border: 0;
+      font: inherit;
+      font-size: 87.5%;
+      color: #444;
+      background: none;
+    }
+    .gss-iconbox-action > * + * {
+      border-left: 1px solid #e6e6e6;
+    }
+    .gss-iconbox-action button {
+      cursor: pointer;
+      outline: none;
+    }
+    .gss-iconbox-action button:hover,
+    .gss-iconbox-action button:focus {
+      color: #c71585;
+    }
+    .gss-iconbox-action button:focus {
+      outline: solid 1px;
+      outline-offset: -6px;
+    }
+    .gss-iconbox-action button:active {
+      color: black;
+    }
+  </style>
+  <style>
+    .gss-showOriginal .gss-iconbox #gss-icon-box {
+      width: 100px;
+      height: 100px;
+    }
+    
+    .gss-showOriginal .gss-iconbox #gss-icon-chevron-right {
+      width: 100px;
+      height: 100px;
+    }
+    
+    .gss-showOriginal .gss-iconbox #gss-icon-euro {
+      width: 100px;
+      height: 100px;
+    }
+    
+    .gss-showOriginal .gss-iconbox #gss-icon-eye {
+      width: 100px;
+      height: 100px;
+    }
+    
+    .gss-showOriginal .gss-iconbox #gss-icon-graph {
+      width: 100px;
+      height: 100px;
+    }
+    
+    .gss-showOriginal .gss-iconbox #gss-icon-hamburger {
+      width: 100px;
+      height: 100px;
+    }
+    
+    .gss-showOriginal .gss-iconbox #gss-icon-heart {
+      width: 100px;
+      height: 100px;
+    }
+    
+    .gss-showOriginal .gss-iconbox #gss-icon-incentro {
+      width: 440px;
+      height: 75px;
+    }
+    
+    .gss-showOriginal .gss-iconbox #gss-icon-mobile-alt {
+      width: 100px;
+      height: 100px;
+    }
+    
+    .gss-showOriginal .gss-iconbox #gss-icon-pencil {
+      width: 100px;
+      height: 100px;
+    }
+    
+    .gss-showOriginal .gss-iconbox #gss-icon-renew {
+      width: 100px;
+      height: 100px;
+    }
+    
+    .gss-showOriginal .gss-iconbox #gss-icon-sim {
+      width: 100px;
+      height: 100px;
+    }
+    
+    .gss-showOriginal .gss-iconbox #gss-icon-user-edit {
+      width: 100px;
+      height: 100px;
+    }
+    
+    .gss-showOriginal .gss-iconbox #gss-icon-user {
+      width: 100px;
+      height: 100px;
+    }
+    
+    
+  </style>
+  <style class="gss-filter-css"></style>
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" class="symbols-dictionary">
+  <defs>
+    false
+  </defs>
+  
+  <symbol id="box" viewBox="0 0 100 100">
+     <path d="M8.3 16.4l-8 16.1c-.7 1.4 0 3.2 1.6 3.6l30.9 8.8c1.1.3 2.3-.2 2.9-1.1L50 20l-39.1-5c-1.1-.1-2.1.4-2.6 1.4zm91.4 16.1l-8-16.1c-.5-1-1.5-1.5-2.6-1.4L50 20l14.3 23.8c.6 1 1.8 1.5 2.9 1.1l30.9-8.8c1.6-.5 2.3-2.2 1.6-3.6zM66.5 50c-2.6 0-5.1-1.4-6.5-3.7L50 29.7 40 46.3c-1.4 2.3-3.8 3.7-6.5 3.7-.7 0-1.4-.1-2.1-.3L10 43.6v27.8c0 2.3 1.6 4.3 3.8 4.8l33.8 8.5c1.6.4 3.3.4 4.8 0l33.8-8.5c2.2-.6 3.8-2.6 3.8-4.8V43.6l-21.4 6.1c-.7.2-1.4.3-2.1.3z"/> 
+  </symbol>
+  <symbol id="chevron-right" viewBox="0 0 100 100">
+     <path d="M78.7 53.9L34.2 98.4c-2.1 2.1-5.6 2.1-7.8 0l-5.2-5.2c-2.1-2.1-2.1-5.6 0-7.8L56.5 50 21.3 14.6c-2.1-2.1-2.1-5.6 0-7.8l5.2-5.2c2.1-2.1 5.6-2.1 7.8 0l44.5 44.5c2.1 2.2 2.1 5.6-.1 7.8z"/> 
+  </symbol>
+  <symbol id="euro" viewBox="0 0 100 100">
+     <path d="M83.7 85.2c-.3-1.5-1.7-2.4-3.2-2.1-2.4.5-6.1 1.2-10.1 1.2-12.7 0-22.8-7.8-27.1-19.1h25.4c1.3 0 2.3-.9 2.6-2.1l1.4-6.3c.4-1.7-.9-3.3-2.6-3.3H40c-.3-3.2-.3-6.3 0-9.4h32.7c1.3 0 2.3-.9 2.6-2.1l1.5-6.6c.4-1.7-.9-3.3-2.6-3.3H43.4c4.6-10 14-16.7 26.3-16.7 3.2 0 6.4.5 8.4.9 1.4.3 2.8-.6 3.1-1.9l2.7-9.9c.4-1.5-.6-3-2.1-3.3C79.1.6 74.7 0 70 0 48.3 0 30.8 13.4 24.4 32.1H17c-1.5 0-2.7 1.2-2.7 2.7v6.6c0 1.5 1.2 2.7 2.7 2.7h4.8c-.2 3-.3 6.5 0 9.4H17c-1.5 0-2.7 1.2-2.7 2.7v6.3c0 1.5 1.2 2.7 2.7 2.7h6.7C29.3 85.4 46.7 100 70 100c5.9 0 10.8-1 13.6-1.7 1.4-.4 2.2-1.7 2-3.1l-1.9-10z"/> 
+  </symbol>
+  <symbol id="eye" viewBox="0 0 100 100">
+     <path d="M50 30.6c-1.8 0-3.7.3-5.4.9.8 1.4 1.2 3 1.3 4.7 0 5.4-4.4 9.7-9.7 9.7-1.6 0-3.3-.4-4.7-1.3-3 10.3 3 21 13.3 24s21-3 24-13.3-3-21-13.3-24c-1.8-.5-3.7-.8-5.5-.7zm49.4 16.9C90 29.1 71.3 16.7 50 16.7S10 29.1.6 47.5c-.8 1.6-.8 3.5 0 5.1C10 70.9 28.7 83.3 50 83.3s40-12.4 49.4-30.8c.8-1.6.8-3.4 0-5zM50 75c-17.1 0-32.8-9.5-41.3-25C17.2 34.5 32.9 25 50 25s32.8 9.5 41.3 25C82.8 65.5 67.1 75 50 75z"/> 
+  </symbol>
+  <symbol id="graph" viewBox="0 0 100 100">
+     <path d="M60.1 75.3h6.7c1.9 0 3.4-1.5 3.4-3.4V33.7c0-1.9-1.5-3.4-3.4-3.4h-6.7c-1.9 0-3.4 1.5-3.4 3.4v38.2c0 1.9 1.6 3.4 3.4 3.4zM87.1 75.3h6.7c1.9 0 3.4-1.5 3.4-3.4V6.7c0-1.9-1.5-3.4-3.4-3.4h-6.7c-1.9 0-3.4 1.5-3.4 3.4v65.2c0 1.9 1.5 3.4 3.4 3.4zM96.6 86H3.4C1.5 86 0 87.5 0 89.3v3.9c0 1.9 1.5 3.4 3.4 3.4h93.3c1.9 0 3.4-1.5 3.4-3.4v-3.9c-.1-1.8-1.6-3.3-3.5-3.3zM33.1 75.3h6.7c1.9 0 3.4-1.5 3.4-3.4V15.7c0-1.9-1.5-3.4-3.4-3.4h-6.7c-1.9 0-3.4 1.5-3.4 3.4v56.2c.1 1.9 1.6 3.4 3.4 3.4zM6.2 75.3h6.7c1.9 0 3.4-1.5 3.4-3.4V51.7c0-1.9-1.5-3.4-3.4-3.4H6.2c-1.9 0-3.4 1.5-3.4 3.4v20.2c0 1.9 1.5 3.4 3.4 3.4z"/> 
+  </symbol>
+  <symbol id="hamburger" viewBox="0 0 100 100">
+     <path d="M90.6 50H9.4C4.2 50 0 54.2 0 59.4s4.2 9.4 9.4 9.4h81.2c5.2 0 9.4-4.2 9.4-9.4S95.8 50 90.6 50zm3.2 25H6.2c-1.7 0-3.1 1.4-3.1 3.1v3.1c0 6.9 5.6 12.5 12.5 12.5h68.8c6.9 0 12.5-5.6 12.5-12.5v-3.1c0-1.7-1.4-3.1-3.1-3.1zM11.5 43.8h77.1c6.8 0 10.7-8.6 6.8-14.8C87.5 16.2 70.2 6.3 50 6.2c-20.2 0-37.5 10-45.3 22.7-3.9 6.3 0 14.9 6.8 14.9zM75 21.9c1.7 0 3.1 1.4 3.1 3.1 0 1.7-1.4 3.1-3.1 3.1s-3.1-1.4-3.1-3.1c0-1.7 1.4-3.1 3.1-3.1zm-25-6.3c1.7 0 3.1 1.4 3.1 3.1s-1.4 3.1-3.1 3.1c-1.7 0-3.1-1.4-3.1-3.1s1.4-3.1 3.1-3.1zm-25 6.3c1.7 0 3.1 1.4 3.1 3.1 0 1.7-1.4 3.1-3.1 3.1-1.7 0-3.1-1.4-3.1-3.1 0-1.7 1.4-3.1 3.1-3.1z"/> 
+  </symbol>
+  <symbol id="heart" viewBox="0 0 100 100">
+     <path d="M81.6 20c-9-7.6-23-6.5-31.6 2.3-8.6-8.8-22.6-10-31.6-2.3-11.7 9.9-10 26-1.7 34.6l27.4 27.9c1.6 1.6 3.7 2.5 5.9 2.5s4.3-.9 5.9-2.5l27.4-27.9c8.3-8.5 10.1-24.7-1.7-34.6zm-3.7 29.3l-27.4 28c-.4.4-.7.4-1.1 0l-27.3-28c-5.7-5.8-6.9-16.8 1.1-23.5 6.1-5.1 15.5-4.3 21.3 1.6L50 33l5.5-5.6c5.9-6 15.3-6.7 21.3-1.7 8 6.8 6.8 17.9 1.1 23.6z"/> 
+  </symbol>
+  <symbol id="incentro" viewBox="0 0 440 75">
+     <path d="M15.5 59.4V9H0v65.8c8.5 0 15.5-6.9 15.5-15.4zm113.5 0h-8.1c-9.5.1-17.3-7.4-17.4-16.9s7.4-17.3 16.9-17.4h7.9c8.9 0 16.1-7.2 16.1-16.1h-23.2c-16.4 0-30.6 11.8-32.9 28C85.6 55 98 71.8 116 74.4c1.6.2 3.2.4 4.8.4h23.6c0-8.5-6.9-15.4-15.4-15.4zM80.6 41.8C80.6 23.7 65.9 9 47.8 9H25.5v65.8H41V25.1h7.1c9.4 0 17.1 7.7 17.1 17.1v32.6h15.4v-33zm265.7 17.3V41.9c0-9.5 7.7-17.1 17.1-17.1h8.1V9.1h-8.1c-18.1 0-32.8 14.7-32.8 32.8v32.9c8.6 0 15.7-7 15.7-15.7zm-76.1-17.3c0-18.1-14.7-32.8-32.8-32.8h-23.6v65.8h15.5V25.1h8.4c9.4 0 17.1 7.6 17.1 17.1v32.6h15.5v-33zm-82.4 17.6h-8.1c-3.1 0-6.2-.8-8.8-2.4 17.5-.4 31.7-14.3 32.4-31.8V9H180c-16.6 0-31 12.2-33 28.7-2.3 18 10.4 34.6 28.5 36.9 1.4.2 2.8.3 4.2.3h23.6c-.1-8.6-7-15.5-15.5-15.5zm-25-20c1.4-8.3 8.5-14.3 16.9-14.3h7.7c-.7 9.5-8.9 16.6-18.4 15.9-2.2-.1-4.3-.7-6.2-1.6zm157.5 19.7h-10c-9.4 0-17.1-7.6-17.1-17.1v-2.1h5.9c8.4 0 15.1-6.8 15.1-15.1h-21v-8.5C292.7 7.9 286 1 277.4.3V42c0 18.1 14.7 32.8 32.8 32.8h10l.1-15.7z" fill="#fe5000"/> <circle data-animation="erase-circle" cx="406.4" cy="41.9" r="24.8" fill="none" stroke="#fe5000" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"/> 
+  </symbol>
+  <symbol id="mobile-alt" viewBox="0 0 100 100">
+     <path d="M71.9 0H28.1c-5.2 0-9.4 4.2-9.4 9.4v81.2c0 5.2 4.2 9.4 9.4 9.4h43.8c5.2 0 9.4-4.2 9.4-9.4V9.4C81.2 4.2 77.1 0 71.9 0zM50 93.8c-3.5 0-6.2-2.8-6.2-6.2s2.8-6.2 6.2-6.2 6.2 2.8 6.2 6.2-2.7 6.2-6.2 6.2zm21.9-21.1c0 1.3-1.1 2.3-2.3 2.3H30.5c-1.3 0-2.3-1.1-2.3-2.3v-61c0-1.3 1.1-2.3 2.3-2.3h39.1c1.3 0 2.3 1.1 2.3 2.3v61z"/> 
+  </symbol>
+  <symbol id="pencil" viewBox="0 0 100 100">
+     <path d="M97.2 27.7l-9 9c-.9.9-2.4.9-3.3 0L63.2 15.1c-.9-.9-.9-2.4 0-3.3l9-9c3.7-3.7 9.6-3.7 13.3 0l11.7 11.7c3.7 3.6 3.7 9.6 0 13.2zm-41.7-8.2L4.2 70.8.1 94.5c-.6 3.2 2.2 6 5.4 5.4l23.7-4.2 51.3-51.3c.9-.9.9-2.4 0-3.3L58.8 19.5c-.9-.9-2.4-.9-3.3 0zM24.2 66.4c-1.1-1.1-1.1-2.8 0-3.9l30.1-30.1c1.1-1.1 2.8-1.1 3.9 0s1.1 2.8 0 3.9L28.1 66.4c-1.1 1-2.8 1-3.9 0zm-7 16.4h9.4v7.1L14 92.1 7.9 86l2.2-12.6h7.1v9.4z"/> 
+  </symbol>
+  <symbol id="renew" viewBox="0 0 100 100">
+     <path d="M83.3 15h-6.6c-1 0-1.7.8-1.7 1.7l.6 11.5c-6.3-7.4-15.7-12.1-26.2-12.1-19 0-34.4 15.5-34.4 34.4C15 69.6 30.4 85 49.4 85c8.9 0 17-3.4 23.1-8.9.7-.6.7-1.7.1-2.4L67.8 69c-.6-.6-1.6-.7-2.3-.1-4.3 3.8-10 6.1-16.1 6.1C35.9 75 25 64.1 25 50.6c0-13.5 10.9-24.4 24.4-24.4 8.5 0 15.9 4.3 20.3 10.8l-14.1-.7c-1 0-1.7.7-1.7 1.7v6.6c0 .9.7 1.7 1.7 1.7h27.8c.9 0 1.7-.7 1.7-1.7V16.7c-.1-.9-.8-1.7-1.8-1.7z"/> 
+  </symbol>
+  <symbol id="sim" viewBox="0 0 100 100">
+     <path d="M61 41.6H39c-2.7 0-4.8 2.1-4.8 4.8v36.9c0 2.7 2.1 4.8 4.8 4.8h22c2.7 0 4.8-2.1 4.8-4.8v-37c-.1-2.6-2.2-4.7-4.8-4.7z"/> <path d="M59.9 0H30.8c-4.6 0-8.3 4.2-8.3 9.4v81.2c0 5.2 3.7 9.4 8.3 9.4h38.5c4.6 0 8.2-4.2 8.2-9.4V20L59.9 0zm7.6 84.1c0 3.3-2.7 6-6 6h-23c-3.3 0-6-2.7-6-6V45.4c0-3.3 2.7-6 6-6h23c3.3 0 6 2.7 6 6v38.7z"/> 
+  </symbol>
+  <symbol id="user-edit" viewBox="0 0 100 100">
+     <path d="M35 50c11 0 20-9 20-20s-9-20-20-20-20 9-20 20 9 20 20 20zm14 5h-2.6c-3.5 1.6-7.3 2.5-11.4 2.5s-7.9-.9-11.4-2.5H21C9.4 55 0 64.4 0 76v6.5C0 86.6 3.4 90 7.5 90h43c-.4-1.1-.5-2.2-.4-3.3l1.1-9.5.2-1.7 1.2-1.2 12.1-12.1C60.8 57.8 55.2 55 49 55zm7.1 22.7L55 87.2c-.2 1.6 1.2 2.9 2.8 2.8l9.5-1.1 21.5-21.5-11.2-11.2-21.5 21.5zM98.9 52L93 46.1c-1.5-1.5-3.8-1.5-5.3 0L81.8 52l-.6.6 11.2 11.2 6.5-6.5c1.5-1.5 1.5-3.8 0-5.3z"/> 
+  </symbol>
+  <symbol id="user" viewBox="0 0 100 100">
+     <path d="M67.5 59.4c-5.6 0-8.3 3.1-17.5 3.1s-11.9-3.1-17.5-3.1C18 59.4 6.2 71.1 6.2 85.6v5c0 5.2 4.2 9.4 9.4 9.4h68.8c5.2 0 9.4-4.2 9.4-9.4v-5c0-14.5-11.8-26.2-26.3-26.2zm16.9 31.2H15.6v-5c0-9.3 7.6-16.9 16.9-16.9 2.9 0 7.5 3.1 17.5 3.1 10.1 0 14.6-3.1 17.5-3.1 9.3 0 16.9 7.6 16.9 16.9v5zM50 56.2c15.5 0 28.1-12.6 28.1-28.1S65.5 0 50 0 21.9 12.6 21.9 28.1 34.5 56.2 50 56.2zm0-46.8c10.3 0 18.8 8.4 18.8 18.8S60.3 46.9 50 46.9s-18.8-8.4-18.8-18.8S39.7 9.4 50 9.4z"/> 
+  </symbol>
+  <symbol id="gss-icon-list" viewBox="0 0 5 5">
+    <rect width="2" height="2" x="0" y="0"></rect>
+    <rect width="2" height="2" x="3" y="0"></rect>
+    <rect width="2" height="2" x="0" y="3"></rect>
+    <rect width="2" height="2" x="3" y="3"></rect>
+  </symbol>
+</svg>
+<header class="gss-toolbar">
+  <h1>14 Symbols</h1>
+  <button class="gss-toolbar-list">
+    <svg aria-label="Compact" width="15" height="15"><use xlink:href="#gss-icon-list"></use>
+    </svg> List
+  </button>
+  <input class="gss-toolbar-filter" type="search"
+         placeholder="Filter 14 symbols…"
+         aria-label="Filter by id" title="Filter by id">
+  <button class="gss-toolbar-orig" data-toggle-class="gss-showOriginal">Original Size</button>
+  <button class="gss-toolbar-outl" data-toggle-class="gss-showColor">Test Color</button>
+</header>
+<main>
+<nav class="gss-iconlist" hidden></nav>
+<div class="gss-iconboxes">
+  <div class="gss-iconbox gss-searchable"
+       id="gss-iconbox-box"
+       data-search="box box 100x100 <1 <2 <3 <4 <5 <6 <7 <8 <9">
+    <div class="gss-iconbox-header">
+      <h2>box</h2>
+      <span>0.5&thinsp;kB</span>
+    </div>
+    <p class="gss-iconbox-head2">
+      <span>box.svg</span>
+      <span>100&thinsp;×&thinsp;100</span>
+      <span>502&thinsp;B</span>
+    </p>
+    <div class="gss-iconbox-wrapper">
+      <div class="gss-iconbox-icon" data-dimensions="100&thinsp;×&thinsp;100">
+        <svg role="img" id="gss-icon-box">
+          <use xlink:href="#box"></use>
+        </svg>
+      </div>
+      <div class="gss-iconbox-code">
+        <code>&lt;svg role=&quot;img&quot; class=&quot;box&quot;&gt;
+  &lt;use xlink:href=&quot;#box&quot;&gt;&lt;/use&gt;
+&lt;/svg&gt;</code>
+      </div>
+    </div>
+    <div class="gss-iconbox-action">
+      <button data-action="copy">Copy</button>
+      <button data-action="info">Show</button>
+    </div>
+  </div>
+  <div class="gss-iconbox gss-searchable"
+       id="gss-iconbox-chevron-right"
+       data-search="chevron-right chevron-right 100x100 <1 <2 <3 <4 <5 <6 <7 <8 <9">
+    <div class="gss-iconbox-header">
+      <h2>chevron-right</h2>
+      <span>0.3&thinsp;kB</span>
+    </div>
+    <p class="gss-iconbox-head2">
+      <span>chevron-right.svg</span>
+      <span>100&thinsp;×&thinsp;100</span>
+      <span>257&thinsp;B</span>
+    </p>
+    <div class="gss-iconbox-wrapper">
+      <div class="gss-iconbox-icon" data-dimensions="100&thinsp;×&thinsp;100">
+        <svg role="img" id="gss-icon-chevron-right">
+          <use xlink:href="#chevron-right"></use>
+        </svg>
+      </div>
+      <div class="gss-iconbox-code">
+        <code>&lt;svg role=&quot;img&quot; class=&quot;chevron-right&quot;&gt;
+  &lt;use xlink:href=&quot;#chevron-right&quot;&gt;&lt;/use&gt;
+&lt;/svg&gt;</code>
+      </div>
+    </div>
+    <div class="gss-iconbox-action">
+      <button data-action="copy">Copy</button>
+      <button data-action="info">Show</button>
+    </div>
+  </div>
+  <div class="gss-iconbox gss-searchable"
+       id="gss-iconbox-euro"
+       data-search="euro euro 100x100 <1 <2 <3 <4 <5 <6 <7 <8 <9">
+    <div class="gss-iconbox-header">
+      <h2>euro</h2>
+      <span>0.6&thinsp;kB</span>
+    </div>
+    <p class="gss-iconbox-head2">
+      <span>euro.svg</span>
+      <span>100&thinsp;×&thinsp;100</span>
+      <span>639&thinsp;B</span>
+    </p>
+    <div class="gss-iconbox-wrapper">
+      <div class="gss-iconbox-icon" data-dimensions="100&thinsp;×&thinsp;100">
+        <svg role="img" id="gss-icon-euro">
+          <use xlink:href="#euro"></use>
+        </svg>
+      </div>
+      <div class="gss-iconbox-code">
+        <code>&lt;svg role=&quot;img&quot; class=&quot;euro&quot;&gt;
+  &lt;use xlink:href=&quot;#euro&quot;&gt;&lt;/use&gt;
+&lt;/svg&gt;</code>
+      </div>
+    </div>
+    <div class="gss-iconbox-action">
+      <button data-action="copy">Copy</button>
+      <button data-action="info">Show</button>
+    </div>
+  </div>
+  <div class="gss-iconbox gss-searchable"
+       id="gss-iconbox-eye"
+       data-search="eye eye 100x100 <1 <2 <3 <4 <5 <6 <7 <8 <9">
+    <div class="gss-iconbox-header">
+      <h2>eye</h2>
+      <span>0.5&thinsp;kB</span>
+    </div>
+    <p class="gss-iconbox-head2">
+      <span>eye.svg</span>
+      <span>100&thinsp;×&thinsp;100</span>
+      <span>457&thinsp;B</span>
+    </p>
+    <div class="gss-iconbox-wrapper">
+      <div class="gss-iconbox-icon" data-dimensions="100&thinsp;×&thinsp;100">
+        <svg role="img" id="gss-icon-eye">
+          <use xlink:href="#eye"></use>
+        </svg>
+      </div>
+      <div class="gss-iconbox-code">
+        <code>&lt;svg role=&quot;img&quot; class=&quot;eye&quot;&gt;
+  &lt;use xlink:href=&quot;#eye&quot;&gt;&lt;/use&gt;
+&lt;/svg&gt;</code>
+      </div>
+    </div>
+    <div class="gss-iconbox-action">
+      <button data-action="copy">Copy</button>
+      <button data-action="info">Show</button>
+    </div>
+  </div>
+  <div class="gss-iconbox gss-searchable"
+       id="gss-iconbox-graph"
+       data-search="graph graph 100x100 <1 <2 <3 <4 <5 <6 <7 <8 <9">
+    <div class="gss-iconbox-header">
+      <h2>graph</h2>
+      <span>0.7&thinsp;kB</span>
+    </div>
+    <p class="gss-iconbox-head2">
+      <span>graph.svg</span>
+      <span>100&thinsp;×&thinsp;100</span>
+      <span>659&thinsp;B</span>
+    </p>
+    <div class="gss-iconbox-wrapper">
+      <div class="gss-iconbox-icon" data-dimensions="100&thinsp;×&thinsp;100">
+        <svg role="img" id="gss-icon-graph">
+          <use xlink:href="#graph"></use>
+        </svg>
+      </div>
+      <div class="gss-iconbox-code">
+        <code>&lt;svg role=&quot;img&quot; class=&quot;graph&quot;&gt;
+  &lt;use xlink:href=&quot;#graph&quot;&gt;&lt;/use&gt;
+&lt;/svg&gt;</code>
+      </div>
+    </div>
+    <div class="gss-iconbox-action">
+      <button data-action="copy">Copy</button>
+      <button data-action="info">Show</button>
+    </div>
+  </div>
+  <div class="gss-iconbox gss-searchable"
+       id="gss-iconbox-hamburger"
+       data-search="hamburger hamburger 100x100 <1 <2 <3 <4 <5 <6 <7 <8 <9">
+    <div class="gss-iconbox-header">
+      <h2>hamburger</h2>
+      <span>0.7&thinsp;kB</span>
+    </div>
+    <p class="gss-iconbox-head2">
+      <span>hamburger.svg</span>
+      <span>100&thinsp;×&thinsp;100</span>
+      <span>679&thinsp;B</span>
+    </p>
+    <div class="gss-iconbox-wrapper">
+      <div class="gss-iconbox-icon" data-dimensions="100&thinsp;×&thinsp;100">
+        <svg role="img" id="gss-icon-hamburger">
+          <use xlink:href="#hamburger"></use>
+        </svg>
+      </div>
+      <div class="gss-iconbox-code">
+        <code>&lt;svg role=&quot;img&quot; class=&quot;hamburger&quot;&gt;
+  &lt;use xlink:href=&quot;#hamburger&quot;&gt;&lt;/use&gt;
+&lt;/svg&gt;</code>
+      </div>
+    </div>
+    <div class="gss-iconbox-action">
+      <button data-action="copy">Copy</button>
+      <button data-action="info">Show</button>
+    </div>
+  </div>
+  <div class="gss-iconbox gss-searchable"
+       id="gss-iconbox-heart"
+       data-search="heart heart 100x100 <1 <2 <3 <4 <5 <6 <7 <8 <9">
+    <div class="gss-iconbox-header">
+      <h2>heart</h2>
+      <span>0.4&thinsp;kB</span>
+    </div>
+    <p class="gss-iconbox-head2">
+      <span>heart.svg</span>
+      <span>100&thinsp;×&thinsp;100</span>
+      <span>397&thinsp;B</span>
+    </p>
+    <div class="gss-iconbox-wrapper">
+      <div class="gss-iconbox-icon" data-dimensions="100&thinsp;×&thinsp;100">
+        <svg role="img" id="gss-icon-heart">
+          <use xlink:href="#heart"></use>
+        </svg>
+      </div>
+      <div class="gss-iconbox-code">
+        <code>&lt;svg role=&quot;img&quot; class=&quot;heart&quot;&gt;
+  &lt;use xlink:href=&quot;#heart&quot;&gt;&lt;/use&gt;
+&lt;/svg&gt;</code>
+      </div>
+    </div>
+    <div class="gss-iconbox-action">
+      <button data-action="copy">Copy</button>
+      <button data-action="info">Show</button>
+    </div>
+  </div>
+  <div class="gss-iconbox gss-searchable"
+       id="gss-iconbox-incentro"
+       data-search="incentro incentro 440x75 >1 <2 <3 <4 <5 <6 <7 <8 <9">
+    <div class="gss-iconbox-header">
+      <h2>incentro</h2>
+      <span>1.2&thinsp;kB</span>
+    </div>
+    <p class="gss-iconbox-head2">
+      <span>incentro.svg</span>
+      <span>440&thinsp;×&thinsp;75</span>
+      <span>1232&thinsp;B</span>
+    </p>
+    <div class="gss-iconbox-wrapper">
+      <div class="gss-iconbox-icon" data-dimensions="440&thinsp;×&thinsp;75">
+        <svg role="img" id="gss-icon-incentro">
+          <use xlink:href="#incentro"></use>
+        </svg>
+      </div>
+      <div class="gss-iconbox-code">
+        <code>&lt;svg role=&quot;img&quot; class=&quot;incentro&quot;&gt;
+  &lt;use xlink:href=&quot;#incentro&quot;&gt;&lt;/use&gt;
+&lt;/svg&gt;</code>
+      </div>
+    </div>
+    <div class="gss-iconbox-action">
+      <button data-action="copy">Copy</button>
+      <button data-action="info">Show</button>
+    </div>
+  </div>
+  <div class="gss-iconbox gss-searchable"
+       id="gss-iconbox-mobile-alt"
+       data-search="mobile-alt mobile-alt 100x100 <1 <2 <3 <4 <5 <6 <7 <8 <9">
+    <div class="gss-iconbox-header">
+      <h2>mobile-alt</h2>
+      <span>0.4&thinsp;kB</span>
+    </div>
+    <p class="gss-iconbox-head2">
+      <span>mobile-alt.svg</span>
+      <span>100&thinsp;×&thinsp;100</span>
+      <span>388&thinsp;B</span>
+    </p>
+    <div class="gss-iconbox-wrapper">
+      <div class="gss-iconbox-icon" data-dimensions="100&thinsp;×&thinsp;100">
+        <svg role="img" id="gss-icon-mobile-alt">
+          <use xlink:href="#mobile-alt"></use>
+        </svg>
+      </div>
+      <div class="gss-iconbox-code">
+        <code>&lt;svg role=&quot;img&quot; class=&quot;mobile-alt&quot;&gt;
+  &lt;use xlink:href=&quot;#mobile-alt&quot;&gt;&lt;/use&gt;
+&lt;/svg&gt;</code>
+      </div>
+    </div>
+    <div class="gss-iconbox-action">
+      <button data-action="copy">Copy</button>
+      <button data-action="info">Show</button>
+    </div>
+  </div>
+  <div class="gss-iconbox gss-searchable"
+       id="gss-iconbox-pencil"
+       data-search="pencil pencil 100x100 <1 <2 <3 <4 <5 <6 <7 <8 <9">
+    <div class="gss-iconbox-header">
+      <h2>pencil</h2>
+      <span>0.5&thinsp;kB</span>
+    </div>
+    <p class="gss-iconbox-head2">
+      <span>pencil.svg</span>
+      <span>100&thinsp;×&thinsp;100</span>
+      <span>468&thinsp;B</span>
+    </p>
+    <div class="gss-iconbox-wrapper">
+      <div class="gss-iconbox-icon" data-dimensions="100&thinsp;×&thinsp;100">
+        <svg role="img" id="gss-icon-pencil">
+          <use xlink:href="#pencil"></use>
+        </svg>
+      </div>
+      <div class="gss-iconbox-code">
+        <code>&lt;svg role=&quot;img&quot; class=&quot;pencil&quot;&gt;
+  &lt;use xlink:href=&quot;#pencil&quot;&gt;&lt;/use&gt;
+&lt;/svg&gt;</code>
+      </div>
+    </div>
+    <div class="gss-iconbox-action">
+      <button data-action="copy">Copy</button>
+      <button data-action="info">Show</button>
+    </div>
+  </div>
+  <div class="gss-iconbox gss-searchable"
+       id="gss-iconbox-renew"
+       data-search="renew renew 100x100 <1 <2 <3 <4 <5 <6 <7 <8 <9">
+    <div class="gss-iconbox-header">
+      <h2>renew</h2>
+      <span>0.5&thinsp;kB</span>
+    </div>
+    <p class="gss-iconbox-head2">
+      <span>renew.svg</span>
+      <span>100&thinsp;×&thinsp;100</span>
+      <span>459&thinsp;B</span>
+    </p>
+    <div class="gss-iconbox-wrapper">
+      <div class="gss-iconbox-icon" data-dimensions="100&thinsp;×&thinsp;100">
+        <svg role="img" id="gss-icon-renew">
+          <use xlink:href="#renew"></use>
+        </svg>
+      </div>
+      <div class="gss-iconbox-code">
+        <code>&lt;svg role=&quot;img&quot; class=&quot;renew&quot;&gt;
+  &lt;use xlink:href=&quot;#renew&quot;&gt;&lt;/use&gt;
+&lt;/svg&gt;</code>
+      </div>
+    </div>
+    <div class="gss-iconbox-action">
+      <button data-action="copy">Copy</button>
+      <button data-action="info">Show</button>
+    </div>
+  </div>
+  <div class="gss-iconbox gss-searchable"
+       id="gss-iconbox-sim"
+       data-search="sim sim 100x100 <1 <2 <3 <4 <5 <6 <7 <8 <9">
+    <div class="gss-iconbox-header">
+      <h2>sim</h2>
+      <span>0.4&thinsp;kB</span>
+    </div>
+    <p class="gss-iconbox-head2">
+      <span>sim.svg</span>
+      <span>100&thinsp;×&thinsp;100</span>
+      <span>387&thinsp;B</span>
+    </p>
+    <div class="gss-iconbox-wrapper">
+      <div class="gss-iconbox-icon" data-dimensions="100&thinsp;×&thinsp;100">
+        <svg role="img" id="gss-icon-sim">
+          <use xlink:href="#sim"></use>
+        </svg>
+      </div>
+      <div class="gss-iconbox-code">
+        <code>&lt;svg role=&quot;img&quot; class=&quot;sim&quot;&gt;
+  &lt;use xlink:href=&quot;#sim&quot;&gt;&lt;/use&gt;
+&lt;/svg&gt;</code>
+      </div>
+    </div>
+    <div class="gss-iconbox-action">
+      <button data-action="copy">Copy</button>
+      <button data-action="info">Show</button>
+    </div>
+  </div>
+  <div class="gss-iconbox gss-searchable"
+       id="gss-iconbox-user-edit"
+       data-search="user-edit user-edit 100x100 <1 <2 <3 <4 <5 <6 <7 <8 <9">
+    <div class="gss-iconbox-header">
+      <h2>user-edit</h2>
+      <span>0.5&thinsp;kB</span>
+    </div>
+    <p class="gss-iconbox-head2">
+      <span>user-edit.svg</span>
+      <span>100&thinsp;×&thinsp;100</span>
+      <span>486&thinsp;B</span>
+    </p>
+    <div class="gss-iconbox-wrapper">
+      <div class="gss-iconbox-icon" data-dimensions="100&thinsp;×&thinsp;100">
+        <svg role="img" id="gss-icon-user-edit">
+          <use xlink:href="#user-edit"></use>
+        </svg>
+      </div>
+      <div class="gss-iconbox-code">
+        <code>&lt;svg role=&quot;img&quot; class=&quot;user-edit&quot;&gt;
+  &lt;use xlink:href=&quot;#user-edit&quot;&gt;&lt;/use&gt;
+&lt;/svg&gt;</code>
+      </div>
+    </div>
+    <div class="gss-iconbox-action">
+      <button data-action="copy">Copy</button>
+      <button data-action="info">Show</button>
+    </div>
+  </div>
+  <div class="gss-iconbox gss-searchable"
+       id="gss-iconbox-user"
+       data-search="user user 100x100 <1 <2 <3 <4 <5 <6 <7 <8 <9">
+    <div class="gss-iconbox-header">
+      <h2>user</h2>
+      <span>0.5&thinsp;kB</span>
+    </div>
+    <p class="gss-iconbox-head2">
+      <span>user.svg</span>
+      <span>100&thinsp;×&thinsp;100</span>
+      <span>522&thinsp;B</span>
+    </p>
+    <div class="gss-iconbox-wrapper">
+      <div class="gss-iconbox-icon" data-dimensions="100&thinsp;×&thinsp;100">
+        <svg role="img" id="gss-icon-user">
+          <use xlink:href="#user"></use>
+        </svg>
+      </div>
+      <div class="gss-iconbox-code">
+        <code>&lt;svg role=&quot;img&quot; class=&quot;user&quot;&gt;
+  &lt;use xlink:href=&quot;#user&quot;&gt;&lt;/use&gt;
+&lt;/svg&gt;</code>
+      </div>
+    </div>
+    <div class="gss-iconbox-action">
+      <button data-action="copy">Copy</button>
+      <button data-action="info">Show</button>
+    </div>
+  </div>
+</div>
+</main>
+<script type="text/javascript">
+  (function () {
+    var header = document.querySelector('.gss-toolbar');
+    var boxes = document.querySelector('.gss-iconboxes');
+    var clist = document.querySelector('.gss-iconlist');
+    var main = document.querySelector('main');
+
+    // Show header
+    header.classList.add('gss-toolbar--active');
+
+    // Hide example code and show controls
+    [].forEach.call(
+      boxes.querySelectorAll('.gss-iconbox'),
+      toggleBoxContent
+    );
+
+    // Toggle list of smaller icons
+    var listToggle = header.querySelector('.gss-toolbar-list');
+    listToggle.hidden = false;
+    listToggle.addEventListener('click', function(event) {
+        toggleCompactList();
+    });
+    // Close list and navigate
+    clist.addEventListener('click', function(event) {
+      var link = closest(
+        event.target,
+        function(el){return el.hasAttribute('href')}
+      );
+      if (link) {
+        event.preventDefault();
+        var target = document.querySelector(link.getAttribute('href'));
+        if (target) toggleCompactList('big', target);
+      }
+    });
+
+    // Enable filter box
+    var filterInput = header.querySelector('.gss-toolbar-filter');
+    var filterStyle = document.querySelector('.gss-filter-css');
+    // filter once on page load, then on key presses
+    if (filterInput && filterStyle) {
+      filterIcons(filterInput.value, filterStyle);
+      filterInput.addEventListener('keypress', function(e) {
+        if (e.keyCode === 27) {
+          e.currentTarget.value = '';
+          filterIcons('', filterStyle);
+        }
+      });
+      filterInput.addEventListener('input', function(e) {
+        filterIcons(e.currentTarget.value, filterStyle);
+      });
+      filterInput.hidden = false;
+    }
+
+    // Icon actions (with event delegation)
+    boxes.addEventListener('click', function(event) {
+      var action = event.target.getAttribute('data-action');
+      if (!action) return;
+      var box = closest(event.target, function(el){
+        return el.classList.contains('gss-iconbox');
+      });
+      if (box && action === 'info') {
+        var state = toggleBoxContent(box);
+      }
+      if (box && action === 'copy') {
+        selectAndCopy(box.querySelector('code'));
+      }
+    });
+    // Remove JS-added tabindex from boxes, to avoid giving a focusring
+    // to a box by clicking it or its content.
+    boxes.addEventListener('blur', function(event) {
+      var t = event.target;
+      if (t.classList.contains('gss-iconbox') && t.hasAttribute('tabindex')) {
+        t.removeAttribute('tabindex');
+      }
+    }, true);
+
+    // Enable checkboxes
+    header.addEventListener('click', function(event) {
+      var attr = 'data-toggle-class';
+      var btn = closest(event.target, function(el) {
+        return el.hasAttribute(attr);
+      });
+      if (btn) {
+        var c = btn.getAttribute(attr);
+        if (main.classList.contains(c)) {
+          main.classList.remove(c);
+          btn.setAttribute('aria-pressed', 'false');
+        } else {
+          main.classList.add(c);
+          btn.setAttribute('aria-pressed', 'true');
+        }
+      }
+    });
+
+    /**
+     * Quick and dirty polyfill for element.closest
+     * @param {Element} self
+     * @param {Function} cb - must return true for a matching element
+     * @return {Element|null}
+     */
+    function closest(self, cb) {
+      if (cb(self)) return self;
+      var p = self.parentElement;
+      return p === null ? null : closest(p, cb);
+    }
+
+    /**
+     * Toggle code example visibility
+     */
+    function toggleBoxContent(box) {
+      var a = 'data-state', x = 'icon', y = 'info';
+      var s = box.getAttribute(a) === x ? y : x;
+      box.setAttribute(a, s);
+      return s;
+    }
+
+    /**
+     * Copy example code to clipboard
+     * https://developers.google.com/web/updates/2015/04/cut-and-copy-commands
+     */
+    function selectAndCopy(element) {
+      window.getSelection().removeAllRanges();
+      var range = document.createRange();
+      range.selectNode(element);
+      window.getSelection().addRange(range);
+      document.execCommand('copy');
+    }
+
+    /**
+     * Filter content by id, with multiple words possible (additive)
+     * Filtering is done by injecting CSS rules in a stylesheet
+     */
+    function filterIcons(query, stylesheet) {
+      // clean up input
+      var search = query.toLowerCase()
+        .replace(/["'\\\]){}]+/g, ' ')
+        .replace('/\s+/g', ' ')
+        .trim();
+      // undo filter
+      if (search === '') {
+        stylesheet.innerHTML = '';
+        return;
+      }
+      // add filter
+      var keywords = search.split(' ');
+      var css = '';
+      for (var i=0; i<keywords.length; i++) {
+        if (i>0) css += ',\n';
+        css += '.gss-searchable:not([data-search*="' + keywords[i] + '"])';
+      }
+      css += '\n{ display: none !important; }';
+      stylesheet.innerHTML = css;
+    }
+
+    /**
+     * Show the compact list
+     * @param {string} mode - 'small' or 'big'
+     * @param {Element|undefined} target - element to focus
+     */
+    function toggleCompactList(mode, target) {
+      if (clist.childElementCount === 0) {
+        clist.innerHTML = '<ul>' + getCompactList(boxes).join('\n') + '</ul>';
+      }
+      if (['small', 'big'].indexOf(mode) === -1) {
+        mode = clist.hidden ? 'small' : 'big';
+      }
+      // switch content
+      clist.hidden = (mode === 'big');
+      boxes.hidden = (mode === 'small');
+
+      // update button status
+      listToggle.setAttribute('aria-pressed', String(mode === 'small'));
+
+      // scroll to the top if showing the small list
+      if (mode === 'small' || (mode === 'big' && !target)) {
+        window.scrollTo(0, 0);
+      }
+      // scroll to element and give it focus if going to big mode
+      if (mode === 'big' && target) {
+        // focus element
+        target.setAttribute('tabindex', '-1');
+        target.focus();
+        // centering in viewport
+        var y = target.offsetTop - window.innerHeight / 2 + target.offsetHeight / 2;
+        window.scrollTo(0, Math.max(Math.round(y) - 20 /* adjust for header */, 0));
+      }
+    }
+
+    /**
+     * Make the list of smaller icons by copying from the big list
+     */
+    function getCompactList(source) {
+      var icons = source.querySelectorAll('.gss-iconbox');
+      return [].map.call(icons, function(el) {
+        var search = el.getAttribute('data-search');
+        var icon = el.querySelector('.gss-iconbox-icon > svg').outerHTML;
+        return '<li class="gss-iconlist-item gss-searchable" ' +
+          'data-search="' + search +'"><a href="#' + el.id + '">' +
+          icon + '</a></li>';
+      });
+    }
+
+  }());
+</script>
+</body>
+</html>

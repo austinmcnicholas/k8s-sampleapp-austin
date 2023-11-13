@@ -1,0 +1,121 @@
+.product {
+  &__container {
+    > .mx-listview > ul {
+      display: flex;
+      flex-wrap: wrap;
+      > li {
+      	> .mx-dataview {
+      		height: 100%;
+      		> .mx-dataview-content {
+      			height: 100% !important;
+      		}
+      	}
+	    border: solid 1px $gray-primary;
+	    border-radius: 4px;
+	    margin-bottom: 14px;
+	    overflow: hidden;
+	    padding: 14px;
+	    position: relative;
+	    width: calc(100% / 3 - (28px /3));
+	    &:not(:nth-child(3n)) {
+	    	margin-right: 14px;
+	    }
+	    &:focus {
+	    	background-color: white;
+	    }
+	    &:hover {
+	      background-color: white;
+	      .product__description {
+	        opacity: 1;
+          z-index: 1;
+	        &::before {
+	        	opacity: 1;
+	        }
+	        &::after {
+	        	transform: rotate(0deg) translateY(0%) scaleX(1);
+	        }
+	      }
+	      .product__button {
+	        border-color: white;
+	        color: white;
+          z-index: 1;
+	        &:hover {
+	          background-color: transparent;
+	        }
+	      }
+	    }
+	  }
+	}
+
+    .mx-listview-loadMore {
+      background-color: transparent;
+      border-color: $color-red;
+      color: $color-red;
+      display: block;
+      margin: 0 auto;
+      margin-top: 9px;
+      width: auto;
+      &:focus, &:hover {
+        background-color: $color-red;
+        color: white;
+      }
+    }
+  }
+
+  &__item {
+  	height: 100%;
+  	display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__title {
+    font-weight: bold;
+    font-size: $font-size-h4;
+  }
+
+  &__description {
+    color: white;
+    height: calc(100% + (14px * 2));
+    left: -14px;
+    opacity: 0;
+    padding: 14px;
+    position: absolute;
+    top: -14px;
+    transition: opacity .3s ease, transform .3s ease;
+    width: calc(100% + (14px * 2));
+    z-index: -1;
+    &::before {
+      @include pseudo-absolute();
+      background-image: linear-gradient(0deg, rgba(51,51,51,0) 0%, $color-red) 90%;
+      opacity: 0;
+      transition: opacity .2s ease;
+      transition-delay: .2s;
+    }
+    &::after {
+      @include pseudo-absolute(-2);
+      background-color: $color-red;
+      border-radius: 4px;
+      opacity: .8;
+      transform: rotate(-45deg) translateY(100%) scaleX(1.8);
+      transition: opacity .3s ease, transform .3s ease;
+    }
+  }
+  
+  &__visual {
+    text-align: center;
+  }
+  
+  &__button {
+    background-color: transparent;
+    margin-top: 14px;
+    position: relative;
+    width: 100%;
+    z-index: 2;
+  }
+}
+.t-main {
+  .product__description{
+    display:none !important;
+  }
+}

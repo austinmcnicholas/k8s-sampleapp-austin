@@ -1,0 +1,40 @@
+.border-left {
+    border-left: 1px solid $gray-primary;
+}
+
+.border-top {
+    border-top: 1px solid $gray-primary;
+}
+
+.border-right {
+    border-right: 1px solid $gray-primary;
+}
+
+.border-bottom {
+    border-bottom: 1px solid $gray-primary;
+}
+
+.flexmain {
+    flex: 1;
+}
+
+.img-profile {
+    height: 40px;
+    width: 40px;
+    object-fit: cover;
+    object-position: center;
+    position: relative;
+    border: 1px solid $gray-primary;
+}
+
+.o-visible {
+    overflow: visible !important;
+}
+
+.no-padding{
+    padding: 0 !important;
+}
+
+.width-100 {
+    width: 100%;
+}

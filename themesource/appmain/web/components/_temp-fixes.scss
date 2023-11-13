@@ -1,0 +1,222 @@
+.widget-timeline-events-wrapper {
+    margin-left: 0;
+
+    ul,
+    li,
+    .widget-timeline-info-wrapper  {
+        width: 100%;
+    }
+
+    .widget-timeline-info-wrapper {
+        span {
+            margin-bottom: 5px;
+
+            &:last-of-type {
+                margin-bottom: 10px;
+            }
+        }
+
+        img.img-icon {
+            width: 30px !important;
+            height: 30px !important;
+        }
+    }
+
+    .timeline-dot {
+        width: 18px;
+        height: 18px;
+        background-color: $gray-light;
+        border-radius: 50%;
+        border: 2px solid #fff;
+    }
+
+    .timeline-dot-filled {
+        background-color: $brand-success;
+    }
+}
+
+.custom-dataview-wrapper {
+    .tab-lined {
+        &.mx-tabcontainer {
+            > .mx-tabcontainer-tabs {
+                li {
+                    margin-right: 0;
+
+                    &.active {
+                        > a {
+                            border-bottom-color: #0595db;
+                        }
+                    }
+
+                    a {
+                        border-bottom-width: 4px;
+
+                        .mx-tabcontainer-badge {
+                            background-color: #0595db;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .column-header {
+        margin-bottom: 10px;
+
+        .fa-arrows-alt-v {
+            width: 14px;
+            height: 14px;
+            background: url('../../../../../resources/double-chevron.svg') no-repeat;
+            transform: rotate(90deg);
+            display: inline-block;
+            background-size: cover;
+
+            path {
+                display: none;
+            }
+        }
+
+        .fa-long-arrow-alt-up {
+            width: 10px;
+            height: 10px;
+            background: url('../../../../../resources/chevron.svg') no-repeat;
+            transform: rotate(180deg);
+            display: inline-block;
+            background-size: cover;
+
+            path {
+                display: none;
+            }
+        }
+        
+        .fa-long-arrow-alt-down {
+            width: 10px;
+            height: 10px;
+            background: url('../../../../../resources/chevron.svg') no-repeat;
+            display: inline-block;
+            background-size: cover;
+
+            path {
+                display: none;
+            }
+        }
+    }
+
+    .column-selector {
+        .column-selector-button {
+            border-color: $gray;
+            color: $gray;
+
+            &:hover {
+                background-color: $gray-light;
+            }
+        }
+
+        input[type='checkbox'] {
+            &:checked {
+                &:before {
+                    background-color: #0595db;
+                    border-color: $gray;
+                }
+            }
+        }
+    }
+
+    .filter-container {
+        .filter-selector {
+            .filter-selector-content {
+                .filter-selector-button {
+                    border-color: $gray;
+                    color: $gray;
+
+                    &:hover {
+                        background-color: $gray-light;
+                    }
+                }
+            }
+        }
+
+        .filter-input {
+            border-color: $gray;
+        }
+
+        .react-datepicker-wrapper {
+            .react-datepicker__input-container {
+                .filter-input {
+                    border-top-right-radius: 0;
+                    border-bottom-right-radius: 0;
+                    padding-right: 5px;
+                    padding-left: 5px;
+                }
+            }
+        }
+
+        .btn-calendar {
+            border-color: $gray;
+            color: $gray;
+            margin-left: 0;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            border-left-width: 0;
+
+            &:hover {
+                background-color: $gray-light;
+            }
+        }
+    }
+
+    .mx-link {
+        color: $brand-info;
+    }
+
+    .table {
+        .d-block {
+            margin-bottom: 5px;
+        }
+    }
+
+    .column-selector-button {
+        border: none;
+        padding: 0 !important;
+        margin: 0 !important;
+        margin-top: -24px !important;
+   
+        .fa-eye {
+            width: 25px;
+            height: 25px;
+            background: url('../../../../../resources/more.svg') no-repeat;
+            display: inline-block;
+            background-size: cover;
+            transform: scale(1);
+            transition: transform .2s ease-in-out ;
+
+            path {
+                display: none;
+            }
+        }
+
+        &:hover,
+        &:focus {
+            background-color: transparent !important;
+
+            .fa-eye {
+                transform: scale(.9);
+            }
+        }
+    }
+}
+
+.card-map-custom {
+    width: fit-content;
+    height: fit-content;
+    background-color: rgba(5, 149, 219, 0.9);
+    color: #fff;
+
+    p {
+        margin: 0;
+    }
+
+    h2 {
+        color: #fff;
+    }
+}

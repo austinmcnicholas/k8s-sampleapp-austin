@@ -1,0 +1,341 @@
+.card {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px;
+    padding: 30px;
+    overflow: inherit;
+    // border-radius: 12px;
+    &.customer-option{
+        padding:15px;
+    }
+}
+
+.card-rounded {
+    border-radius: 12px;
+    margin-bottom: 30px;
+    padding: 30px;
+
+    &--section {
+        + .card-rounded--section {
+            border-left: 1px solid $gray-primary;
+        }
+    }
+
+    &--summary {
+        margin-top: 15px;
+        padding: 15px;
+        border-top: 1px solid $gray-primary;
+
+        &--value {
+            margin: 0;
+            font-weight: 600;
+            margin-top: .3em;
+            font-size: 2.5em;
+            line-height: 1;
+        }
+
+        &--title {
+            text-transform: capitalize;
+
+        }
+
+    }
+
+    &--value {
+        margin: 0;
+        font-weight: 600;
+        margin-top: .3em;
+        margin-bottom: .4em;
+        font-size: 2.5em;
+        line-height: 1;
+    }
+
+    &--title {
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+
+    &--subtitle {
+        text-transform: capitalize;
+    }
+}
+
+.card-details {
+    margin-bottom: 15px;
+    // padding: 30px;
+    // border-radius: 12px;
+
+    .img-rounded {
+        object-fit: cover;
+        object-position: center;
+        width: 60px;
+        height: 60px;
+        position: relative;
+    }
+
+    &--label {
+        display: block;
+        font-weight: normal;
+        color: $font-base-color;
+        width: 100%;
+    }
+
+    &--value {
+        font-weight: bold;
+        color: $font-base-color;
+    }
+
+    &--important {
+        padding: 15px;
+    }
+
+    &--section {
+        margin-top: 15px;
+        border-top: 1px solid $gray-primary;
+        padding-top: 20px;
+    }
+}
+
+.card-map {
+    height: 400px;
+
+    &--content {
+        position: relative;
+        z-index: 2;
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        align-content: space-around;
+        justify-content: space-between;
+        align-content: space-between;
+        align-items: space-between;
+        height: 100%;
+        flex: 1;
+    }
+}
+
+.card-tile.card-tasks {
+    padding: 30px;
+    height: 400px;
+    overflow: none;
+    .card-tile--status{
+        height: 60px;
+        width: 60px;
+    }
+}
+
+.card-tile {
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 12px;
+    overflow: hidden;
+
+    .btn + .btn {
+        margin-left: 5px;
+    }
+
+    img {
+        object-fit: cover;
+        object-position: center;
+        width: 60px;
+        height: 60px;
+        position: relative;
+    }
+
+    &--title {
+        text-transform: capitalize;
+        font-weight: bold;
+        font-size: 1.1em;
+    }
+
+    &--nowrap {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        width: 200px;
+    }
+
+    &--label {
+        display: block;
+        font-weight: normal;
+        color: $font-base-color;
+        width: 100%;
+    }
+
+    &--value {
+        font-weight: bold;
+        color: $font-base-color;
+    }
+
+    &--image {
+        height: 64px;
+        width: 64px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 5px;
+        margin-right: 15px;
+        object-position: center;
+        object-fit: cover;
+    }
+
+    &--status {
+        border: 1px solid $gray-primary;
+        border-radius: 4px;
+        background: #fff;
+        height: 64px;
+        width: 64px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 5px;
+        margin-right: 15px;
+        background-repeat: no-repeat;
+        background-position: center;
+
+        &.todo {
+            background-image: url(../../../images/todo.png);
+        }
+
+        &.running {
+            background-image: url(../../../images/running.png);
+        }
+
+        &.done {
+            background-image: url(../../../images/done.png);
+        }
+
+        &.assigned {
+            background-image: url(../../../images/assigned.png);
+        }
+    }
+
+    &.card-incident{
+        overflow: hidden;
+        padding: 0 15px;
+        align-items: center;
+        display: flex;
+        height: 100px;
+    }
+
+    &--progress {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-top: 5px;
+        margin-bottom: 15px;
+        width: 100%;
+
+        span {
+            margin-left: 10px;
+        }
+
+        .widget-progress-bar {
+            flex: 1;
+        }
+
+        @media (max-width: 800px) {
+            span {
+                display: none;
+            }
+        }
+    }
+
+    .progress {
+        width: 100%;
+        margin: 0;
+        height: 8px;
+        border-radius: 10px;
+        box-shadow: none;
+        background-color: lighten(#000, 90%);
+        margin-right: 1em;
+
+        .progress-bar {
+            border-radius: 10px;
+        }
+    }
+}
+
+.card-incident-container {
+    .mx-dataview-content {
+        height: auto;
+        overflow: hidden;
+    }
+}
+
+.card-square {
+    border-radius: 12px;
+    background: #fff;
+    margin-bottom: 30px;
+    width: 100%;
+    padding-top: 100%;
+    position: relative;
+
+    &--content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        justify-content: space-around !important;
+        padding: 15px;
+
+    }
+
+    &--title {
+        text-transform: uppercase;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    &--value {
+        margin: 0;
+        font-weight: 600;
+        font-size: 4em;
+        line-height: 1;
+    }
+
+    &--progress {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-top: 10px;
+        width: 100%;
+
+        span {
+            margin-left: 10px;
+        }
+
+        .widget-progress-bar {
+            flex: 1;
+        }
+
+        @media (max-width: 800px) {
+            span {
+                display: none;
+            }
+        }
+    }
+
+    .progress {
+        width: 100%;
+        margin: 0;
+        height: 8px;
+        border-radius: 10px;
+        box-shadow: none;
+        background-color: lighten(#000, 90%);
+        margin-right: 1em;
+
+        .progress-bar {
+            border-radius: 10px;
+        }
+    }
+}
+
+.administrator-homepage {
+    .cardaction {
+        svg,
+        img {
+            width: auto;
+            height: 60px;
+        }
+    }
+}
